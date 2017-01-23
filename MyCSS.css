@@ -8,12 +8,12 @@ body{
 
 #sidebar-wrapper {
   margin-left: -230px;
-  margin-top: 10px;
+  margin-top: 2vh;
   left: 250px;
   width: 265px;
   background: #FFFFFF;
   position: fixed;
-  height: 95%;
+  height: 93.5vh;
   overflow-y: auto;
   z-index: 1000;
   /*background-color: rgba(0,0,0,0.7);*/
@@ -44,7 +44,6 @@ body{
   text-decoration: none;
   font-family: "Avenir" !important;
   font-size: 30px;
-  padding-right: 55px;
 }
 
 .sidebar-nav a:link, a:visited{
@@ -52,8 +51,10 @@ body{
 }
 
 .sidebar-nav li{
-  padding: 12px;
   border-bottom:3px solid #38B0DE;
+  padding-bottom: 12.5px;
+  padding-top: 12.5px;
+  padding-right: 55px;
 }
 
 .sidebar-nav .nav-op:after {
@@ -86,21 +87,10 @@ body{
   top: 75%;
 }
 
-#nav-op1:hover{
+#nav-op1:hover, #nav-op2:hover, #nav-op3:hover, #nav-op4:hover{
   color: #FFFFFF;
 }
 
-#nav-op2:hover{
-  color: #FFFFFF;
-}
-
-#nav-op3:hover{
-  color: #FFFFFF;
-}
-
-#nav-op4:hover{
-  color: #FFFFFF;
-}
 #nav-list1:hover{
   background-color: #CAE1FF;
   transition: 0.25s ease-in-out;
@@ -119,4 +109,8 @@ body{
 #nav-list4:hover{
   background-color: #4981CE;
   transition: 0.25s ease-in-out;
+}
+
+#intro, #about, #projects, #contact{
+  height: 100vh;
 }

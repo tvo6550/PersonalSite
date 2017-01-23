@@ -8,6 +8,8 @@
   <link rel = "stylesheet" href="MyCSS.css">
   <script src = "bootstrap-3.3.7.dist/js/boostrap.min.js">
   </script>
+  <script src = "jquery-3.1.1.min.js">
+  </script>
   <script src = "MyJS.js">
   </script>
 </head>
@@ -15,25 +17,48 @@
   <div id="wrapper">
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li class="sidebar-brand" id="nav-list1">
-          <a class="nav-op" id="nav-op1" href="#">Intro</a>
-        </li>
-        <li class="sidebar-brand" id="nav-list2">
-          <a class="nav-op" id="nav-op2" href="#">About Me</a>
-        </li>
-        <li class="sidebar-brand" id="nav-list3">
-          <a class="nav-op" id="nav-op3" href="#">Projects</a>
-        </li>
-        <li class="sidebar-brand" id="nav-list4">
-          <a class="nav-op" id="nav-op4" href="#">Contact</a>
-        </li>
+        <a class="nav-op" id="nav-op1" href="#intro">
+          <li class="sidebar-brand" id="nav-list1">
+            Intro
+          </li>
+        </a>
+          <a class="nav-op" id="nav-op2" href="#about">
+            <li class="sidebar-brand" id="nav-list2">
+              About
+            </li>
+          </a>
+            <a class="nav-op" id="nav-op3" href="#projects">
+              <li class="sidebar-brand" id="nav-list3">
+                Projects
+              </li>
+            </a>
+          <a class="nav-op" id="nav-op4" href="#contact">
+            <li class="sidebar-brand" id="nav-list4">
+              Contact
+            </li>
+          </a>
       </ul>
     </div>
     <div id="page-content-wrapper">
       <div class="page-content">
         <div class="container">
-          <div class="row">
-            <div class="col-md-6">
+          <div class="row" id="intro">
+            <div class="col-md-12">
+
+            </div>
+          </div>
+          <div class="row" id="about">
+            <div class="col-md-12">
+
+            </div>
+          </div>
+          <div class="row" id="projects">
+            <div class="col-md-12">
+
+            </div>
+          </div>
+          <div class="row" id="contact">
+            <div class="col-md-12">
 
             </div>
           </div>
