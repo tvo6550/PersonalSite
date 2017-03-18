@@ -1,116 +1,47 @@
-body{
-  background: #E0FFFF !important;
-}
-#wrapper {
-  padding-left: 250px;
-  transition: all 0.4s ease 0s;
-}
-
-#sidebar-wrapper {
-  margin-left: -230px;
-  margin-top: 2vh;
-  left: 250px;
-  width: 265px;
-  background: #FFFFFF;
+#top, #bottom, #left, #right {
+  background: #ffffff;
   position: fixed;
-  height: 93.5vh;
-  overflow-y: auto;
-  z-index: 1000;
-  /*background-color: rgba(0,0,0,0.7);*/
 }
 
-#page-content-wrapper {
-  width: 100%;
+#left, #right {
+  top: 0; bottom: 0;
+  width: 15px;
 }
 
-.sidebar-nav {
-  position: absolute;
+#left{
+  left: 0;
+}
+
+#right{
+  right:0;
+}
+
+#top, #bottom {
+  left: 0; right: 0;
+  height: 15px;
+}
+
+#top{
   top: 0;
-  width: 265px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
 }
 
-@font-face {
-  font-family:"Avenir";
-  src: url('MyFonts/AvenirLTStd-Light.otf');
-  font-weight: normal;
-  font-style: normal;
+#bottom{
+  bottom:0;
 }
 
-.sidebar-nav a{
-  text-decoration: none;
-  font-family: "Avenir" !important;
-  font-size: 30px;
+#mainBody{
+  background-color: #FFFFFF;
+  transition:all 1s;
 }
 
-.sidebar-nav a:link, a:visited{
-  color: #38B0DE;
-}
-
-.sidebar-nav li{
-  border-bottom:3px solid #38B0DE;
-  padding-bottom: 12.5px;
-  padding-top: 12.5px;
-  padding-right: 55px;
-}
-
-.sidebar-nav .nav-op:after {
-    content:'';
-    position:absolute;
-    right: 0%;
-}
-
-.sidebar-nav .li{
-  background: yellow;
-}
-
-#nav-op1:after {
-  border:30px solid #CAE1FF;
-  top:0%;
-}
-
-#nav-op2:after {
-  border:30px solid #7EB6FF;
-  top:25%;
-}
-
-#nav-op3:after {
-  border:30px solid #5190ED;
-  top: 50%;
-}
-
-#nav-op4:after {
-  border:30px solid #4981CE;
-  top: 75%;
-}
-
-#nav-op1:hover, #nav-op2:hover, #nav-op3:hover, #nav-op4:hover{
-  color: #FFFFFF;
-}
-
-#nav-list1:hover{
-  background-color: #CAE1FF;
-  transition: 0.25s ease-in-out;
-}
-
-#nav-list2:hover{
-  background-color: #7EB6FF;
-  transition: 0.25s ease-in-out;
-}
-
-#nav-list3:hover{
-  background-color: #5190ED;
-  transition: 0.25s ease-in-out;
-}
-
-#nav-list4:hover{
-  background-color: #4981CE;
-  transition: 0.25s ease-in-out;
-}
-
-#intro, #about, #projects, #contact{
-  height: 100vh;
+.displayDiv{
+    left: 50%;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    font-size: 100px;
+    color: #FFFFFF;
 }
