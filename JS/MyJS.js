@@ -1,4 +1,10 @@
 $(document).ready(function(){
+  //Variable to keep track of previous color
+  var prevColor;
+
+  //Keep track if animating
+  var animating = false;
+
   //Randomize color at the beginning
   $("#mainBody").css("background-color", randomColor());
 
@@ -6,7 +12,7 @@ $(document).ready(function(){
   $(document).scroll(function() {
     var test = randomColor();
     $("#mainBody").css("background-color", test);
-});
+  });
 
   //On key press change view
   $(document).keydown(function(e) {
@@ -46,9 +52,6 @@ function changeEntireViewUp(){
 function changeColor(){
   $("#mainBody").css("background-color", randomColor());
 }
-
-//Variable to keep track of previous color
-var prevColor;
 
 //Pick a new color for background
 function randomColor(){
@@ -103,34 +106,41 @@ function hexc(rgb) {
 //Go to next page
 function changeViewDown(){
   if($('#projects').css('display')!='none'){
-      $('#welcome').show();
-      $('#projects').hide();
+      $('#projects').hide(0, $('#welcome').fadeIn());
     }
   else if($('#welcome').css('display')!='none'){
-      $('#about').show();
-      $('#welcome').hide();
+      $('#welcome').hide(0, $('#about').fadeIn());
     }
   else if($('#about').css('display')!='none'){
-      $('#projects').show();
-      $('#about').hide();
+      $('#about').hide(0, $('#projects').fadeIn());
     }
 }
 
 //Go to previous page
 function changeViewUp(){
   if($('#projects').css('display')!='none'){
-      $('#about').show();
-      $('#projects').hide();
+      $('#projects').hide(0,$('#about').fadeIn());
     }
   else if($('#welcome').css('display')!='none'){
-      $('#projects').show();
-      $('#welcome').hide();
+      $('#welcome').hide(0, $('#projects').fadeIn());
     }
   else if($('#about').css('display')!='none'){
-      $('#welcome').show();
-      $('#about').hide();
+      $('#about').hide(0, $('#welcome').fadeIn());
     }
 }
 
+//Scroll change view
+$(document).mousewheel(function(event, delta){
+  if(!animating){
+    animating = true;
+    if(delta > 0){
+      changeEntireViewUp();
+    }
+    else if(delta < 0){
+      changeEntireViewDown();
+    }
+    animating = false;
+  }
+});
 
 });
