@@ -112,7 +112,7 @@ function changeViewDown(){
     }
   else if($('#welcome').css('display')!='none'){
       $('#welcome').hide(0, $('#about').show());
-      $('#welcomeItem').removeClass('selectedMenu');
+      $('#welcomeItem' ).removeClass('selectedMenu');
       $('#aboutItem').addClass('selectedMenu');
     }
   else if($('#about').css('display')!='none'){
