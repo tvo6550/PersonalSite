@@ -13,6 +13,7 @@
   <script src = "bootstrap-3.3.7-dist\js\bootstrap.min.js"></script></script>
   <script src = "JS\MyJS.js"></script>
   <script src = "JS\jquery.mousewheel.js"></script>
+  <script src="JS\TweenMax.min.js"></script>
 
 </head>
 <body id="mainBody">
@@ -39,27 +40,29 @@
     </div>
   </div>
   <div class="displayDiv" id="welcome">
-    <h1>Welcome</h1>
     <div id="left"></div>
     <div id="right"></div>
     <div id="top"></div>
     <div id="bottom"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
+    <h2 class="welcomeMessage" id="topWelcomeLine">Hi, I'm</h2>
+    <h1 class="welcomeMessage" id="bottomWelcomeLine">Thong Vo</h1>
+    <canvas id="welcomeCanvas">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
 
-        </div>
-        <div class="col-md-4">
+          </div>
+          <div class="col-md-4">
 
-        </div>
-        <div class="col-md-4">
+          </div>
+          <div class="col-md-4">
 
+          </div>
         </div>
       </div>
-    </div>
+    </canvas>
   </div>
   <div class="displayDiv" id="about" style="display:none">
-    <h1>About Me</h1>
     <div id="left"></div>
     <div id="right"></div>
     <div id="top"></div>
@@ -79,7 +82,6 @@
     </div>
   </div>
   <div class="displayDiv" id="skills" style="display:none">
-    <h1>Skills</h1>
     <div id="left"></div>
     <div id="right"></div>
     <div id="top"></div>
@@ -99,7 +101,6 @@
     </div>
   </div>
   <div class="displayDiv" id="projects" style="display:none">
-    <h1>Projects</h1>
     <div id="left"></div>
     <div id="right"></div>
     <div id="top"></div>
@@ -123,16 +124,16 @@
       <div class="col-md-12">
         <ul>
           <il onclick=";">
-            <span><i class="fa fa-envelope" aria-hidden="true"></i> tvo6550@gmail.com</span>
+            <a class="contactLink" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=tvo6550@gmail.com"><span><i class="fa fa-envelope" aria-hidden="true"></i> tvo6550@gmail.com </span></a>
           </il>
           <il onclick=";">
-            <a class="contactLink" href="https://www.facebook.com/TheThongVo" ><span><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</span></a>
+            <a class="contactLink" target="_blank" href="https://www.facebook.com/TheThongVo" ><span><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook </span></a>
           </il>
           <il onclick=";">
-            <a class="contactLink" href="https://www.linkedin.com/in/thong-vo-285480b3"><span><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</span></a>
+            <a class="contactLink" target="_blank" href="https://www.linkedin.com/in/thong-vo-285480b3"><span><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn </span></a>
           </il>
           <il onclick=";">
-            <a class="contactLink" href="https://github.com/tvo6550"><span><i class="fa fa-github-square" aria-hidden="true"></i> GitHub</span></a>
+            <a class="contactLink" target="_blank" href="https://github.com/tvo6550"><span><i class="fa fa-github-square" aria-hidden="true"></i> GitHub </span></a>
           </il>
         </ui>
       </div>
