@@ -66,15 +66,35 @@ h1{
 }
 
 #mainOverlay{
+  position: absolute;
   font-size: 15px;
-  position: fixed;
+  height: 95%;
+  width: 95%;
+  overflow: hidden;
+}
+
+.helper{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 300px;
 }
 
 #tableOfContents{
-  height:50vh;
+  display: flex;
+  top: 46%;
+  bottom:0;
+  padding: 0px;
+
 }
 
-.footer{
+#contentItems{
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 38px;
+}
+
+#footer{
   position: absolute;
   bottom: 0;
   padding-bottom: 10px;
@@ -82,3 +102,18 @@ h1{
   width: 99%;
   text-align: center;
 }
+
+.selectedMenu{
+    transform: scale(1.5);
+}
+
+.contactLink{
+  color: #FFFFFF;
+}
+.contactLink:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.menuItem { transition: all .2s ease-in-out; }
+.menuItem:hover {  }

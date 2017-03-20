@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Thong Vo's Portfolio</title>
+  <link rel="shortcut icon" href="ThongVoPicture.jpg"/>
   <meta charset = "utf-8">
   <meta name = "viewport" content = "width=device-width, initial-scale=1">
   <link rel = "stylesheet" href="..\PersonalSite\bootstrap-3.3.7-dist\css\bootstrap.min.css">
@@ -15,20 +16,25 @@
 
 </head>
 <body id="mainBody">
-  <div class="overlay" id="mainOverlay">
-    <div class="row">
-      <div class="col-md-2" id="tableOfContents">
-        <ul>
-          <il>
-            <i class="fa fa-circle-thin" aria-hidden="true"></i> Welcome
-          </il>
-          <il>
-            <i class="fa fa-circle-thin" aria-hidden="true"></i> About Me
-          </il>
-          <il>
-            <i class="fa fa-circle-thin" aria-hidden="true"></i> Projects
-          </il>
-        </ui>
+  <div class="container" id="mainOverlay">
+    <div class="helper">
+      <div class="row" style = "height: 100%;">
+        <div class="col-md-5" id="tableOfContents">
+          <ul id="contentItems">
+            <il class="menuItem selectedMenu" id="welcomeItem">
+              <span><i class="fa fa-circle-thin" aria-hidden="true"></i> Welcome</span>
+            </il>
+            <il class="menuItem" id="aboutItem">
+              <span><i class="fa fa-circle-thin" aria-hidden="true"></i> About Me</span>
+            </il>
+            <il class="menuItem" id="skillsItem">
+              <span><i class="fa fa-circle-thin" aria-hidden="true"></i> Skills</span>
+            </il>
+            <il class="menuItem" id="projectsItem">
+              <span><i class="fa fa-circle-thin" aria-hidden="true"></i> Projects</span>
+            </il>
+          </ui>
+        </div>
       </div>
     </div>
   </div>
@@ -38,15 +44,17 @@
     <div id="right"></div>
     <div id="top"></div>
     <div id="bottom"></div>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
 
-      </div>
-      <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
 
-      </div>
-      <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
 
+        </div>
       </div>
     </div>
   </div>
@@ -56,15 +64,37 @@
     <div id="right"></div>
     <div id="top"></div>
     <div id="bottom"></div>
-    <div class="row">
-      <div class="col-md-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
 
+        </div>
+        <div class="col-md-4">
+          <img src="ThongVoPicture.jpg" id="myPicture"/>
+        </div>
+        <div class="col-md-6">
+          hello there
+        </div>
       </div>
-      <div class="col-md-4">
-        <img src="ThongVoPicture.jpg" id="myPicture"/>
-      </div>
-      <div class="col-md-6">
-        hello there
+    </div>
+  </div>
+  <div class="displayDiv" id="skills" style="display:none">
+    <h1>Skills</h1>
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="top"></div>
+    <div id="bottom"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
       </div>
     </div>
   </div>
@@ -74,30 +104,35 @@
     <div id="right"></div>
     <div id="top"></div>
     <div id="bottom"></div>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
 
-      </div>
-      <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
 
-      </div>
-      <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
 
+        </div>
       </div>
     </div>
   </div>
-  <div class="footer">
+  <div class="container" id="footer">
     <div class="row" id="contactInfo">
       <div class="col-md-12">
         <ul>
-          <il>
-            <i class="fa fa-envelope" aria-hidden="true"></i> Email
+          <il onclick=";">
+            <span><i class="fa fa-envelope" aria-hidden="true"></i> tvo6550@gmail.com</span>
           </il>
-          <il>
-            <i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook
+          <il onclick=";">
+            <a class="contactLink" href="https://www.facebook.com/TheThongVo" ><span><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</span></a>
           </il>
-          <il>
-            <i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          <il onclick=";">
+            <a class="contactLink" href="https://www.linkedin.com/in/thong-vo-285480b3"><span><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</span></a>
+          </il>
+          <il onclick=";">
+            <a class="contactLink" href="https://github.com/tvo6550"><span><i class="fa fa-github-square" aria-hidden="true"></i> GitHub</span></a>
           </il>
         </ui>
       </div>

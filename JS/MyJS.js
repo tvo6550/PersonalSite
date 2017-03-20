@@ -56,7 +56,7 @@ function changeColor(){
 //Pick a new color for background
 function randomColor(){
 
-  var color1 = "#a5ebff";
+  var color1 = "#77e1ff";
   var color2 = "#f4ce97";
   var color3 = "#e56967";
   var color4 = "#79c694";
@@ -106,26 +106,48 @@ function hexc(rgb) {
 //Go to next page
 function changeViewDown(){
   if($('#projects').css('display')!='none'){
-      $('#projects').hide(0, $('#welcome').fadeIn());
+      $('#projects').hide(0, $('#welcome').show());
+      $('#projectsItem').removeClass('selectedMenu');
+      $('#welcomeItem').addClass('selectedMenu');
     }
   else if($('#welcome').css('display')!='none'){
-      $('#welcome').hide(0, $('#about').fadeIn());
+      $('#welcome').hide(0, $('#about').show());
+      $('#welcomeItem').removeClass('selectedMenu');
+      $('#aboutItem').addClass('selectedMenu');
     }
   else if($('#about').css('display')!='none'){
-      $('#about').hide(0, $('#projects').fadeIn());
+      $('#about').hide(0, $('#skills').show());
+      $('#aboutItem').removeClass('selectedMenu');
+      $('#skillsItem').addClass('selectedMenu');
+    }
+  else if($('#skills').css('display')!='none'){
+      $('#skills').hide(0, $('#projects').show());
+      $('#skillsItem').removeClass('selectedMenu');
+      $('#projectsItem').addClass('selectedMenu');
     }
 }
 
 //Go to previous page
 function changeViewUp(){
   if($('#projects').css('display')!='none'){
-      $('#projects').hide(0,$('#about').fadeIn());
+      $('#projects').hide(0,$('#skills').show());
+      $('#projectsItem').removeClass('selectedMenu');
+      $('#skillsItem').addClass('selectedMenu');
     }
   else if($('#welcome').css('display')!='none'){
-      $('#welcome').hide(0, $('#projects').fadeIn());
+      $('#welcome').hide(0, $('#projects').show());
+      $('#welcomeItem').removeClass('selectedMenu');
+      $('#projectsItem').addClass('selectedMenu');
     }
   else if($('#about').css('display')!='none'){
-      $('#about').hide(0, $('#welcome').fadeIn());
+      $('#about').hide(0, $('#welcome').show());
+      $('#aboutItem').removeClass('selectedMenu');
+      $('#welcomeItem').addClass('selectedMenu');
+    }
+  else if($('#skills').css('display')!='none'){
+      $('#skills').hide(0, $('#about').show());
+      $('#skillsItem').removeClass('selectedMenu');
+      $('#aboutItem').addClass('selectedMenu');
     }
 }
 
@@ -141,6 +163,14 @@ $(document).mousewheel(function(event, delta){
     }
     animating = false;
   }
+});
+
+//Make things selected
+$(function() {
+    $('#contentItems il').click(function() {
+            $(this).siblings().removeClass('selectedMenu');
+            $(this).addClass('selectedMenu');
+    });
 });
 
 });
