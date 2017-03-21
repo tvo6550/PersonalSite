@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Thong Vo's Portfolio</title>
-  <link rel="shortcut icon" href="ThongVoPicture.jpg"/>
+  <title>The Thong Vo</title>
+  <link rel="shortcut icon" href="Pictures\fries.png"/>
   <meta charset = "utf-8">
   <meta name = "viewport" content = "width=device-width, initial-scale=1">
   <link rel = "stylesheet" href="..\PersonalSite\bootstrap-3.3.7-dist\css\bootstrap.min.css">
@@ -14,6 +14,7 @@
   <script src = "JS\MyJS.js"></script>
   <script src = "JS\jquery.mousewheel.js"></script>
   <script src="JS\TweenMax.min.js"></script>
+  <script src="JS\instafeed.min.js"></script>
 
 </head>
 <body id="mainBody">
@@ -23,16 +24,19 @@
         <div class="col-md-5" id="tableOfContents">
           <ul id="contentItems">
             <il class="menuItem selectedMenu" id="welcomeItem">
-              <span><i class="fa fa-circle-thin" aria-hidden="true"></i> Welcome</span>
+              <i class="fa fa-circle" aria-hidden="true"></i> Welcome
             </il>
             <il class="menuItem" id="aboutItem">
-              <span><i class="fa fa-circle-thin" aria-hidden="true"></i> About Me</span>
+              <i class="fa fa-circle-thin" aria-hidden="true"></i> Meet Me
             </il>
             <il class="menuItem" id="skillsItem">
-              <span><i class="fa fa-circle-thin" aria-hidden="true"></i> Skills</span>
+              <i class="fa fa-circle-thin" aria-hidden="true"></i> Skills
             </il>
             <il class="menuItem" id="projectsItem">
-              <span><i class="fa fa-circle-thin" aria-hidden="true"></i> Projects</span>
+              <i class="fa fa-circle-thin" aria-hidden="true"></i> Projects
+            </il>
+            <il class="menuItem" id="foodItem">
+              <i class="fa fa-circle-thin" aria-hidden="true"></i> Food I Eat
             </il>
           </ui>
         </div>
@@ -67,16 +71,19 @@
     <div id="right"></div>
     <div id="top"></div>
     <div id="bottom"></div>
-    <div class="container">
-      <div class="row">
+    <div class="container" style="height: 100%">
+      <div class="row" style="height: 100%">
         <div class="col-md-2">
 
         </div>
-        <div class="col-md-4">
-          <img src="ThongVoPicture.jpg" id="myPicture"/>
+        <div class="col-md-4" style="max-width:333px;">
+          <img src="Pictures/ThongVoPicture.jpg" id="myPicture"/>
         </div>
-        <div class="col-md-6">
-          hello there
+        <div class="col-md-6" id="description">
+          I'm a <b>developer</b> and <b>junior</b> attending <b>Arizona State University</b>.
+          Currently, I am trying to develop myself towards being a <b>full stack developer</b>.
+          I have recently found my passion for <b>Human-Computer Interaction</b>.
+          I really enjoy going out and trying out <b>new food</b>.
         </div>
       </div>
     </div>
@@ -119,21 +126,38 @@
       </div>
     </div>
   </div>
+  <div class="displayDiv" id="food" style="display:none">
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="top"></div>
+    <div id="bottom"></div>
+    <div class="container">
+      <div class="row" id="picContainer">
+        <div class="col-md-12" id="myPics">
+          <ul id="instafeed"></ul>
+        </div>
+        <a href="javascript:void(0)"  id="pressForFood">More Food</a>
+      </div>
+    </div>
+  </div>
   <div class="container" id="footer">
     <div class="row" id="contactInfo">
       <div class="col-md-12">
         <ul>
-          <il onclick=";">
+          <il>
             <a class="contactLink" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=tvo6550@gmail.com"><span><i class="fa fa-envelope" aria-hidden="true"></i> tvo6550@gmail.com </span></a>
           </il>
-          <il onclick=";">
-            <a class="contactLink" target="_blank" href="https://www.facebook.com/TheThongVo" ><span><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook </span></a>
+          <il>
+            <a class="contactLink" target="_blank" href="https://github.com/tvo6550"><span><i class="fa fa-github-square" aria-hidden="true"></i> GitHub </span></a>
           </il>
-          <il onclick=";">
+          <il>
             <a class="contactLink" target="_blank" href="https://www.linkedin.com/in/thong-vo-285480b3"><span><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn </span></a>
           </il>
-          <il onclick=";">
-            <a class="contactLink" target="_blank" href="https://github.com/tvo6550"><span><i class="fa fa-github-square" aria-hidden="true"></i> GitHub </span></a>
+          <il>
+            <a class="contactLink" target="_blank" href="https://www.facebook.com/TheThongVo" ><span><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook </span></a>
+          </il>
+          <il>
+            <a class="contactLink" target="_blank" href="https://www.instagram.com/thethongvo/"><span><i class="fa fa-instagram" aria-hidden="true"></i> Instagram </span></a>
           </il>
         </ui>
       </div>

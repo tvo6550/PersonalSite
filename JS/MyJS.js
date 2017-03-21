@@ -66,10 +66,10 @@ function changeColor(){
 function randomColor(){
 
   var color1 = "#77e1ff";
-  var color2 = "#f4ce97";
+  var color2 = "#f4c17a";
   var color3 = "#e56967";
   var color4 = "#79c694";
-  var color5 = "#efaaca";
+  var color5 = "#efa2c6";
   var colorChoice;
 
   var chooseColor = Math.floor(Math.random() * 5) + 1;
@@ -115,25 +115,50 @@ function hexc(rgb) {
 //Go to next page
 function changeViewDown(){
   if($('#projects').css('display')!='none'){
-      $('#projects').hide(0, $('#welcome').show());
-      $('#welcomeItem').siblings().removeClass('selectedMenu');
-      $('#welcomeItem').addClass('selectedMenu');
+      $('#projects').hide(0, $('#food').show());
+      $('#foodItem').siblings().removeClass('selectedMenu');
+      $('#foodItem').addClass('selectedMenu');
+      $('#projectsItem').children().removeClass('fa-circle');
+      $('#projectsItem').children().addClass('fa-circle-thin');
+      $('#foodItem').children().removeClass('fa-circle-thin');
+      $('#foodItem').children().addClass('fa-circle');
     }
   else if($('#welcome').css('display')!='none'){
       $('#welcome').hide(0, $('#about').show());
       $('#aboutItem').siblings().removeClass('selectedMenu');
       $('#aboutItem').addClass('selectedMenu');
+      $('#welcomeItem').children().removeClass('fa-circle');
+      $('#welcomeItem').children().addClass('fa-circle-thin');
+      $('#aboutItem').children().removeClass('fa-circle-thin');
+      $('#aboutItem').children().addClass('fa-circle');
     }
   else if($('#about').css('display')!='none'){
       $('#about').hide(0, $('#skills').show());
       $('#skillsItem').siblings().removeClass('selectedMenu');
       $('#skillsItem').addClass('selectedMenu');
+      $('#aboutItem').children().removeClass('fa-circle');
+      $('#aboutItem').children().addClass('fa-circle-thin');
+      $('#skillsItem').children().removeClass('fa-circle-thin');
+      $('#skillsItem').children().addClass('fa-circle');
     }
   else if($('#skills').css('display')!='none'){
       $('#skills').hide(0, $('#projects').show());
       $('#projectsItem').siblings().removeClass('selectedMenu');
       $('#projectsItem').addClass('selectedMenu');
+      $('#skillsItem').children().removeClass('fa-circle');
+      $('#skillsItem').children().addClass('fa-circle-thin');
+      $('#projectsItem').children().removeClass('fa-circle-thin');
+      $('#projectsItem').children().addClass('fa-circle');
     }
+    else if($('#food').css('display')!='none'){
+        $('#food').hide(0, $('#welcome').show());
+        $('#welcomeItem').siblings().removeClass('selectedMenu');
+        $('#welcomeItem').addClass('selectedMenu');
+        $('#foodItem').children().removeClass('fa-circle');
+        $('#foodItem').children().addClass('fa-circle-thin');
+        $('#welcomeItem').children().removeClass('fa-circle-thin');
+        $('#welcomeItem').children().addClass('fa-circle');
+      }
 }
 
 //Go to previous page
@@ -142,22 +167,47 @@ function changeViewUp(){
       $('#projects').hide(0,$('#skills').show());
       $('#skillsItem').siblings().removeClass('selectedMenu');
       $('#skillsItem').addClass('selectedMenu');
+      $('#projectsItem').children().removeClass('fa-circle');
+      $('#projectsItem').children().addClass('fa-circle-thin');
+      $('#skillsItem').children().removeClass('fa-circle-thin');
+      $('#skillsItem').children().addClass('fa-circle');
     }
   else if($('#welcome').css('display')!='none'){
-      $('#welcome').hide(0, $('#projects').show());
-      $('#projectsItem').siblings().removeClass('selectedMenu');
-      $('#projectsItem').addClass('selectedMenu');
+      $('#welcome').hide(0, $('#food').show());
+      $('#foodItem').siblings().removeClass('selectedMenu');
+      $('#foodItem').addClass('selectedMenu');
+      $('#welcomeItem').children().removeClass('fa-circle');
+      $('#welcomeItem').children().addClass('fa-circle-thin');
+      $('#foodItem').children().removeClass('fa-circle-thin');
+      $('#foodItem').children().addClass('fa-circle');
     }
   else if($('#about').css('display')!='none'){
       $('#about').hide(0, $('#welcome').show());
       $('#welcomeItem').siblings().removeClass('selectedMenu');
       $('#welcomeItem').addClass('selectedMenu');
+      $('#aboutItem').children().removeClass('fa-circle');
+      $('#aboutItem').children().addClass('fa-circle-thin');
+      $('#welcomeItem').children().removeClass('fa-circle-thin');
+      $('#welcomeItem').children().addClass('fa-circle');
     }
   else if($('#skills').css('display')!='none'){
       $('#skills').hide(0, $('#about').show());
       $('#aboutItem').siblings().removeClass('selectedMenu');
       $('#aboutItem').addClass('selectedMenu');
+      $('#skillsItem').children().removeClass('fa-circle');
+      $('#skillsItem').children().addClass('fa-circle-thin');
+      $('#aboutItem').children().removeClass('fa-circle-thin');
+      $('#aboutItem').children().addClass('fa-circle');
     }
+    else if($('#food').css('display')!='none'){
+        $('#food').hide(0, $('#projects').show());
+        $('#projectsItem').siblings().removeClass('selectedMenu');
+        $('#projectsItem').addClass('selectedMenu');
+        $('#foodItem').children().removeClass('fa-circle');
+        $('#foodItem').children().addClass('fa-circle-thin');
+        $('#projectsItem').children().removeClass('fa-circle-thin');
+        $('#projectsItem').children().addClass('fa-circle');
+      }
 }
 
 //Scroll change view
@@ -203,7 +253,7 @@ $(function() {
     function initHeader() {
         width = window.innerWidth;
         height = window.innerHeight;
-        target = {x: width/2, y: height/2};
+        target = {x: width/2 - 25, y: height/2 - 20};
 
         welcome = document.getElementById('welcome');
         welcome.style.height = height+'px';
@@ -377,5 +427,38 @@ $(function() {
     }
 
 })();
+
+//Max number of pictures
+var maxImages = 1;
+var foundImages = 0;
+//Getting images from my instagram for a feed
+var myFeed = new Instafeed({
+        get: 'user',
+        userId: '525605804',
+        clientId: 'd658be27843b40dcba5f4c2f8f95b1a3',
+        accessToken: '525605804.1677ed0.8ef2fe3068e44d74baddfde1907cf837',
+        limit: '60',
+        sortBy: 'random',
+        success: function(){
+          foundImages = 0;
+        },
+        filter: function(image) {
+        if (image.tags.indexOf('food') >= 0 && foundImages < maxImages) {
+            foundImages = foundImages + 1;
+            return true;
+        }
+        return false;
+        },
+        template: '<li><div><a href="{{link}}" target="_blank"><img src="{{image}}" style="border:10px solid white;"/></div></li>',
+        resolution: 'low_resolution'
+    });
+myFeed.run();
+
+//Refresh feed
+function refreshFeed(){
+  $('#instafeed').empty();
+  myFeed.run();
+}
+document.getElementById ("pressForFood").addEventListener ("click", refreshFeed);
 
 });

@@ -3,6 +3,11 @@
     src: url('../fonts/Roboto-Light.ttf');
 }
 
+@font-face {
+    font-family: 'myFontzThin';
+    src: url('../fonts/Roboto-Thin.ttf');
+}
+
 * {
   font-size: 100%;
   font-family: 'myFontz';
@@ -49,10 +54,19 @@
   overflow: hidden;
 }
 
+#mainContent{
+  width: 99%;
+  height: 99%;
+  overflow: hidden;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+}
 #myPicture{
-  height: 500px;
-  width: 333px;
-  border-radius: 5%;
+  border: 8px solid #ffffff;
 }
 
 .displayDiv{
@@ -60,8 +74,8 @@
     color: #FFFFFF;
     text-align: center;
     transition:all 3s;
-    width: 99%;
-    height: 99%;
+    width: inherit;
+    height: inherit;
 }
 
 #mainOverlay{
@@ -107,6 +121,16 @@
     transform-origin: left;
 }
 
+.selectedMenu{
+    transform: scale(2.0);
+    transform-origin: left;
+}
+
+.selectedMenu i{
+    transform: scale(0.55);
+    transform-origin: left;
+}
+
 .contactLink, .contactLink:visited, .contactLink:active, .contactLink:link, .contactLink:hover{
     text-decoration: none;
     color: #FFFFFF;
@@ -121,6 +145,7 @@ h1{
 
 h2{
   font-size: 75px;
+  font-family: 'myFontzThin';
 }
 
 .welcomeMessage{
@@ -138,9 +163,60 @@ h2{
 
 #welcomeCanvas{
   height: 99%;
-  width: 99%;
+  width: 105%;
 
 }
+
+#about{
+  height: 99%;
+  width: 99%;
+  position: absolute;
+  top: 18%;
+}
+
+#description{
+  font-size: 30px;
+  font-family: 'myFontzThin';
+  top: 7%;
+}
+
+#picContainer{
+  width: 800px;
+  margin: 0px !important;
+  padding: 0px;
+}
+
+#myPics{
+  width: inherit;
+  height: 100%;
+  padding: inherit;
+  position: absolute;
+  left: 39%;
+  top: 25%;
+}
+
+#instafeed{
+  list-style: none;
+  height: 100%;
+  padding: 0;
+}
+
+#instafeed li{
+  float:left;
+  width: 306px;
+  height: 306px;
+}
+
+#pressForFood, #pressForFood.active, #pressForFood.selected{
+  position: absolute;
+  font-size: 30px;
+  top:70.5%;
+  left:46%;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
 
 .menuItem {
   transition: all .2s ease-in-out;
