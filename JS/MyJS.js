@@ -119,60 +119,13 @@ function hexc(rgb) {
     return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
 
-//Go to next page
-function changeViewDown(){
-  if($('#projects').css('display')!='none'){
-      $('#projects').hide(0, $('#food').show());
-      $('#foodItem').siblings().removeClass('selectedMenu');
-      $('#foodItem').addClass('selectedMenu');
-      $('#projectsItem').children().removeClass('fa-circle');
-      $('#projectsItem').children().addClass('fa-circle-thin');
-      $('#foodItem').children().removeClass('fa-circle-thin');
-      $('#foodItem').children().addClass('fa-circle');
-    }
-  else if($('#welcome').css('display')!='none'){
-      $('#welcome').hide(0, $('#about').show());
-      $('#aboutItem').siblings().removeClass('selectedMenu');
-      $('#aboutItem').addClass('selectedMenu');
-      $('#welcomeItem').children().removeClass('fa-circle');
-      $('#welcomeItem').children().addClass('fa-circle-thin');
-      $('#aboutItem').children().removeClass('fa-circle-thin');
-      $('#aboutItem').children().addClass('fa-circle');
-    }
-  else if($('#about').css('display')!='none'){
-      $('#about').hide(0, $('#skills').show());
-      $('#skillsItem').siblings().removeClass('selectedMenu');
-      $('#skillsItem').addClass('selectedMenu');
-      $('#aboutItem').children().removeClass('fa-circle');
-      $('#aboutItem').children().addClass('fa-circle-thin');
-      $('#skillsItem').children().removeClass('fa-circle-thin');
-      $('#skillsItem').children().addClass('fa-circle');
-    }
-  else if($('#skills').css('display')!='none'){
-      $('#skills').hide(0, $('#projects').show());
-      $('#projectsItem').siblings().removeClass('selectedMenu');
-      $('#projectsItem').addClass('selectedMenu');
-      $('#skillsItem').children().removeClass('fa-circle');
-      $('#skillsItem').children().addClass('fa-circle-thin');
-      $('#projectsItem').children().removeClass('fa-circle-thin');
-      $('#projectsItem').children().addClass('fa-circle');
-    }
-    else if($('#food').css('display')!='none'){
-        $('#food').hide(0, $('#welcome').show());
-        $('#welcomeItem').siblings().removeClass('selectedMenu');
-        $('#welcomeItem').addClass('selectedMenu');
-        $('#foodItem').children().removeClass('fa-circle');
-        $('#foodItem').children().addClass('fa-circle-thin');
-        $('#welcomeItem').children().removeClass('fa-circle-thin');
-        $('#welcomeItem').children().addClass('fa-circle');
-      }
-}
-
+//Change view when pressing on menu
 $(".menuItem > a").click(function() {
         changeView($(this));
         return false;
     });
 
+//This is the change view function that will be used mostly everywhere
 function changeView(targetView){
   //Switch the text style
   targetView.parent().siblings().removeClass('selectedMenu');
@@ -245,9 +198,11 @@ $(document).mousewheel(function(event, delta){
   if(!animating){
     animating = true;
 
+    //up and left
     if(delta > 0){
       findNextDisplay("up");
     }
+    //down and right
     else if(delta < 0){
       findNextDisplay("down");
     }
@@ -480,4 +435,5 @@ function refreshFeed(){
 document.getElementById ("pressForFood").addEventListener ("click", refreshFeed);
 
 
+    
 });
