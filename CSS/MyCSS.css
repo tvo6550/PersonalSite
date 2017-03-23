@@ -160,6 +160,12 @@ h2{
   flex-flow: column nowrap;
 }
 
+.alignCol{
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
 .alignCen{
   display: flex;
   align-items: center;
@@ -226,7 +232,7 @@ h2{
 }
 
 #skills{
-  height: 80vh;
+  height: 99vh;
 }
 
 #skillsTop{
