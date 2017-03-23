@@ -144,9 +144,20 @@ h2{
 }
 
 .welcomeMessage{
+  position: absolute;
+	left: 0;
+	right: 0;
+	top: 30%;
+	margin-left: auto;
+ 	margin-right: auto;
 }
 
-#bottomWelcomeLine{
+.alignColCen{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-flow: column nowrap;
 }
 
 #welcomeCanvas{
@@ -301,11 +312,4 @@ h2{
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: #FFFFFF;
-}
-
-.centerColumnAlign{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column nowrap;
 }
