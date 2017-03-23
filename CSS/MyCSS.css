@@ -167,6 +167,13 @@ h2{
   justify-content: center;
 }
 
+.alignColWrap{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-flow:column wrap;
+}
+
 #welcomeCanvas{
   height: 99%;
   width: 105%;
@@ -188,41 +195,27 @@ h2{
 
 #picContainer{
   width: 800px;
-  height: 75vh;
+  height: inherit;
   margin: 0px;
 }
 
 #food{
   height: 100vh;
 }
+
 #foodButton{
-  height: 25vh;
-  top: 75%;
 }
+
 #myPics{
   width: 612px;
-  height: 612px;
+  height: inherit;
 }
 
 #pressForFood, #pressForFood.active, #pressForFood.selected{
-  font-size: 30px;
-  position: absolute;
-  left:45%;
-  top: 40%;
+  font-size: 40px;
   color: #ffffff;
   text-decoration: none;
-}
-
-#instafeed{
-  list-style: none;
-  height: 100%;
-  padding: 0;
-}
-
-#instafeed li{
-  float:left;
-  width: 306px;
-  height: 306px;
+  margin-top: 5%;
 }
 
 #skills{
@@ -310,7 +303,7 @@ h2{
 }
 
 #foodPic{
-  position: fixed; clip: rect(0px, 700px, 500px, 0px);
+  border: 6px solid #ffffff;
 }
 
 a:link, a:visited, a:hover, a:active {

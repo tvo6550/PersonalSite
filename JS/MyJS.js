@@ -422,8 +422,8 @@ var myFeed = new Instafeed({
         }
         return false;
         },
-        template: '<li><div><a href="{{link}}" target="_blank"><img id="foodPic" src="{{image}}"/></div></li>',
-        resolution: 'standard_resolution'
+        template: '<div><a href="{{link}}" target="_blank"><img id="foodPic" src="{{image}}" style="border: 6px solid #ffffff;"/></div>',
+        resolution: 'low_resolution'
     });
 myFeed.run();
 
@@ -435,5 +435,5 @@ function refreshFeed(){
 document.getElementById ("pressForFood").addEventListener ("click", refreshFeed);
 
 
-    
+
 });
