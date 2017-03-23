@@ -160,6 +160,13 @@ h2{
   flex-flow: column nowrap;
 }
 
+.alignCen{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
 #welcomeCanvas{
   height: 99%;
   width: 105%;
@@ -170,16 +177,13 @@ h2{
 }
 
 #about{
-  height: 99%;
+  height: 99vh;
   width: 99%;
-  position: absolute;
-  top: 18%;
 }
 
 #description{
   font-size: 30px;
   font-family: 'myFontzThin';
-  top: 7%;
 }
 
 #picContainer{
