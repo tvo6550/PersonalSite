@@ -24,119 +24,156 @@
         <div class="col-md-5" id="tableOfContents">
           <ul id="contentItems">
             <il class="menuItem selectedMenu" id="welcomeItem">
-              <i class="fa fa-circle" aria-hidden="true"></i> Welcome
+              <a class = "test"href=""><i class="fa fa-circle" aria-hidden="true"></i> Welcome</a>
             </il>
             <il class="menuItem" id="aboutItem">
-              <i class="fa fa-circle-thin" aria-hidden="true"></i> Meet Me
+              <a href=""><i class="fa fa-circle-thin" aria-hidden="true"></i> Meet Me</a>
             </il>
             <il class="menuItem" id="skillsItem">
-              <i class="fa fa-circle-thin" aria-hidden="true"></i> Skills
+              <a href=""><i class="fa fa-circle-thin" aria-hidden="true"></i> Skills</a>
             </il>
             <il class="menuItem" id="projectsItem">
-              <i class="fa fa-circle-thin" aria-hidden="true"></i> Projects
+              <a href=""><i class="fa fa-circle-thin" aria-hidden="true"></i> Projects</a>
             </il>
             <il class="menuItem" id="foodItem">
-              <i class="fa fa-circle-thin" aria-hidden="true"></i> Food I Eat
+              <a href=""><i class="fa fa-circle-thin" aria-hidden="true"></i> Food I Eat</a>
             </il>
           </ui>
         </div>
       </div>
     </div>
   </div>
-  <div class="displayDiv" id="welcome">
-    <div id="left"></div>
-    <div id="right"></div>
-    <div id="top"></div>
-    <div id="bottom"></div>
-    <h2 class="welcomeMessage" id="topWelcomeLine">Hi, I'm</h2>
-    <h1 class="welcomeMessage" id="bottomWelcomeLine">Thong Vo</h1>
-    <canvas id="welcomeCanvas">
+  <div>
+    <div class="displayDiv" id="welcome">
+      <div id="left"></div>
+      <div id="right"></div>
+      <div id="top"></div>
+      <div id="bottom"></div>
+      <h2 class="welcomeMessage" id="topWelcomeLine">Hi, I'm</h2>
+      <h1 class="welcomeMessage" id="bottomWelcomeLine">Thong Vo</h1>
+      <canvas id="welcomeCanvas">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+          </div>
+        </div>
+      </canvas>
+    </div>
+    <div class="displayDiv" id="about" style="display:none">
+      <div id="left"></div>
+      <div id="right"></div>
+      <div id="top"></div>
+      <div id="bottom"></div>
+      <div class="container" style="height: 100%">
+        <div class="row" style="height: 100%">
+          <div class="col-md-2">
+
+          </div>
+          <div class="col-md-4" style="max-width:333px;">
+            <img src="Pictures/ThongVoPicture.jpg" id="myPicture"/>
+          </div>
+          <div class="col-md-6" id="description">
+            I'm a <b>developer</b> and <b>junior</b> attending <b>Arizona State University</b>.
+            Currently, I am trying to develop myself towards being a <b>full stack developer</b>.
+            I have recently found my passion for <b>Human-Computer Interaction</b>.
+            I really enjoy experiencing the world and trying out <b>new food</b>.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="displayDiv" id="skills" style="display:none">
+      <div id="left"></div>
+      <div id="right"></div>
+      <div id="top"></div>
+      <div id="bottom"></div>
+      <div class="container" style="height: 120%;">
+        <div class="row" style="height: 7%;">
+
+        </div>
+        <div class="row" id="skillsTop">
+          <h2 class="skillsTitle" style="margin-top: 0px; margin-bottom: 30px;">Proficient</h2>
+            <div class="col-md-3" style="margin-left: 4.4%;">
+              <img class="skillIcon" id="icon1" src="Pictures/c-logo.png"/ style="height:200px; width:200px";>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <img class="skillIcon" id="icon2" src="Pictures/cpp.png"/ style="height:200px; width:200px";>
+            </div>
+            <div class="col-md-3 col-md-offset-1" >
+              <img class="skillIcon" id="icon3" src="Pictures/Java_logo_icon.png"/ style="width:258px; height:200px";>
+            </div>
+        </div>
+        <div class="row" id="skillsBottom">
+          <h2 class="skillsTitle skillsSpace" style="margin-bottom: 30px; margin-top: 0px; margin-left: 2%;">Experienced</h2>
+          <div class="col-md-2 col-md-offset-2" style="margin-left:10%;">
+            <img class="skillIcon"  id="icon4" src="Pictures/csharp.png"/ style="height:140px; width:124px;">
+          </div>
+          <div class="col-md-2 skillsSpace">
+            <img class="skillIcon" id="icon5" src="Pictures/HTML5_Logo_512.png"/ style="height:140px; width:140px;">
+          </div>
+          <div class="col-md-2 skillsSpace">
+            <img class="skillIcon" id="icon6" src="Pictures/CSS3.png"/ style="height:140px; width:100px;">
+          </div>
+          <div class="col-md-2 skillsSpace">
+            <img class="skillIcon" id="icon7" src="Pictures/javascript-shield.png"/ style="height:155px; width:155px;">
+          </div>
+        </div>
+        <div class="row" id="skillsLast">
+          <div class="col-md-2 col-md-offset-3" style="margin-left:21%;">
+            <img class="skillIcon skillsLastItem" id="icon8" src="Pictures/sharepoint-logo.png"/ style="height:160px; width:160px;">
+          </div>
+          <div class="col-md-2 skillsSpaceLast">
+            <img class="skillIcon skillsLastItem" id="icon9" src="Pictures/bootstrap-white-logo.png"/ style="height:140px; width:168px;">
+          </div>
+          <div class="col-md-2 skillsSpaceLast" style="margin-left:4.6%">
+            <img class="skillIcon skillsLastItem" id="icon10" src="Pictures/jqpic.gif"/ style="height:140px; width:140px;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="displayDiv" id="projects" style="display:none; height: 85vh;">
+      <div id="left"></div>
+      <div id="right"></div>
+      <div id="top"></div>
+      <div id="bottom"></div>
       <div class="container">
+        <div class="row" style="margin-top: 5%;">
+          <div class="col-md-6 col-md-offset-3">
+            <h2>Burger Builder</h2>
+            <img src="http://etc.usf.edu/clipart/40600/40690/pb_sq_40690_lg.gif"  style="height: 175px; width: 300px;"/>
+          </div>
+        </div>
         <div class="row">
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-4">
-
+          <div class="col-md-6 col-md-offset-3">
+            <h2>Star Gazer</h2>
+            <img src="http://etc.usf.edu/clipart/40600/40690/pb_sq_40690_lg.gif" style="height: 175px; width: 300px;"/>
           </div>
         </div>
       </div>
-    </canvas>
-  </div>
-  <div class="displayDiv" id="about" style="display:none">
-    <div id="left"></div>
-    <div id="right"></div>
-    <div id="top"></div>
-    <div id="bottom"></div>
-    <div class="container" style="height: 100%">
-      <div class="row" style="height: 100%">
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-4" style="max-width:333px;">
-          <img src="Pictures/ThongVoPicture.jpg" id="myPicture"/>
-        </div>
-        <div class="col-md-6" id="description">
-          I'm a <b>developer</b> and <b>junior</b> attending <b>Arizona State University</b>.
-          Currently, I am trying to develop myself towards being a <b>full stack developer</b>.
-          I have recently found my passion for <b>Human-Computer Interaction</b>.
-          I really enjoy going out and trying out <b>new food</b>.
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="displayDiv" id="skills" style="display:none">
-    <div id="left"></div>
-    <div id="right"></div>
-    <div id="top"></div>
-    <div id="bottom"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-
+    <div class="displayDiv" id="food" style="display:none">
+      <div id="left"></div>
+      <div id="right"></div>
+      <div id="top"></div>
+      <div id="bottom"></div>
+      <div class="container" style="height:100vh;">
+        <div class="row" id="picContainer">
+          <div class="col-md-12" id="myPics">
+            <ul id="instafeed"></ul>
+          </div>
         </div>
-        <div class="col-md-4">
-
+        <div class="row" id="foodButton">
+          <div class="col-md-12" style="height: 100%;">
+            <a href="javascript:void(0)"  id="pressForFood">More Food</a>
+          </div>
         </div>
-        <div class="col-md-4">
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="displayDiv" id="projects" style="display:none">
-    <div id="left"></div>
-    <div id="right"></div>
-    <div id="top"></div>
-    <div id="bottom"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-
-        </div>
-        <div class="col-md-4">
-
-        </div>
-        <div class="col-md-4">
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="displayDiv" id="food" style="display:none">
-    <div id="left"></div>
-    <div id="right"></div>
-    <div id="top"></div>
-    <div id="bottom"></div>
-    <div class="container">
-      <div class="row" id="picContainer">
-        <div class="col-md-12" id="myPics">
-          <ul id="instafeed"></ul>
-        </div>
-        <a href="javascript:void(0)"  id="pressForFood">More Food</a>
       </div>
     </div>
   </div>

@@ -24,23 +24,30 @@ $(document).ready(function(){
     if(!animating){
       animating = true;
       switch(e.which) {
+          case 32: // space
+          if ($('#food').css('display')!='none') {
+            refreshFeed();
+          }
+          break;
           case 37: // left
-          changeEntireViewUp()
+          findNextDisplay("up");
           break;
 
           case 38: // up
-          changeEntireViewUp()
+          findNextDisplay("up");
           break;
 
           case 39: // right
-          changeEntireViewDown();
+          findNextDisplay("down");
           break;
 
           case 40: // down
-          changeEntireViewDown();
+          findNextDisplay("down");
           break;
 
-          default: return; // exit this handler for other keys
+          default:
+          animating = false;
+          return; // exit this handler for other keys
       }
       e.preventDefault(); // prevent the default action (scroll / move caret)
       setTimeout(function() {animating = false}, 300);
@@ -161,80 +168,91 @@ function changeViewDown(){
       }
 }
 
-//Go to previous page
-function changeViewUp(){
-  if($('#projects').css('display')!='none'){
-      $('#projects').hide(0,$('#skills').show());
-      $('#skillsItem').siblings().removeClass('selectedMenu');
-      $('#skillsItem').addClass('selectedMenu');
-      $('#projectsItem').children().removeClass('fa-circle');
-      $('#projectsItem').children().addClass('fa-circle-thin');
-      $('#skillsItem').children().removeClass('fa-circle-thin');
-      $('#skillsItem').children().addClass('fa-circle');
-    }
-  else if($('#welcome').css('display')!='none'){
-      $('#welcome').hide(0, $('#food').show());
-      $('#foodItem').siblings().removeClass('selectedMenu');
-      $('#foodItem').addClass('selectedMenu');
-      $('#welcomeItem').children().removeClass('fa-circle');
-      $('#welcomeItem').children().addClass('fa-circle-thin');
-      $('#foodItem').children().removeClass('fa-circle-thin');
-      $('#foodItem').children().addClass('fa-circle');
-    }
-  else if($('#about').css('display')!='none'){
-      $('#about').hide(0, $('#welcome').show());
-      $('#welcomeItem').siblings().removeClass('selectedMenu');
-      $('#welcomeItem').addClass('selectedMenu');
-      $('#aboutItem').children().removeClass('fa-circle');
-      $('#aboutItem').children().addClass('fa-circle-thin');
-      $('#welcomeItem').children().removeClass('fa-circle-thin');
-      $('#welcomeItem').children().addClass('fa-circle');
-    }
-  else if($('#skills').css('display')!='none'){
-      $('#skills').hide(0, $('#about').show());
-      $('#aboutItem').siblings().removeClass('selectedMenu');
-      $('#aboutItem').addClass('selectedMenu');
-      $('#skillsItem').children().removeClass('fa-circle');
-      $('#skillsItem').children().addClass('fa-circle-thin');
-      $('#aboutItem').children().removeClass('fa-circle-thin');
-      $('#aboutItem').children().addClass('fa-circle');
-    }
-    else if($('#food').css('display')!='none'){
-        $('#food').hide(0, $('#projects').show());
-        $('#projectsItem').siblings().removeClass('selectedMenu');
-        $('#projectsItem').addClass('selectedMenu');
-        $('#foodItem').children().removeClass('fa-circle');
-        $('#foodItem').children().addClass('fa-circle-thin');
-        $('#projectsItem').children().removeClass('fa-circle-thin');
-        $('#projectsItem').children().addClass('fa-circle');
-      }
+$(".menuItem > a").click(function() {
+        changeView($(this));
+        return false;
+    });
+
+function changeView(targetView){
+  //Switch the text style
+  targetView.parent().siblings().removeClass('selectedMenu');
+  targetView.parent().addClass('selectedMenu');
+  targetView.children().addClass('fa-circle');
+  targetView.children().removeClass('fa-circle-thin');
+  targetView.parent().siblings().children().children().removeClass('fa-circle');
+  targetView.parent().siblings().children().children().addClass('fa-circle-thin');
+
+  //Change the view
+  displayID = targetView.parent().attr('id');
+  $(".displayDiv").hide(0);
+
+  if(displayID == "welcomeItem")
+    $("#welcome").show();
+  else if(displayID == "aboutItem")
+    $("#about").show();
+  else if(displayID == "skillsItem")
+    $("#skills").show();
+  else if(displayID == "projectsItem")
+    $("#projects").show();
+  else if(displayID == "foodItem")
+    $("#food").show();
+}
+
+//Find next display
+function findNextDisplay(direction){
+  //Find current display
+  var currentDisplay = $(".displayDiv:visible");
+  var changeTo;
+  var changeParam;
+
+  currentDisplay.hide();
+
+  //Determine direction and change view based on it.
+  if(direction == "up"){
+    changeTo = currentDisplay.prev();
+
+    //At top of list already. Go to bottom
+    if(changeTo.attr('id') == null)
+      changeTo = $("#food");
+
+  }
+  else if(direction == "down"){
+    changeTo = currentDisplay.next();
+
+    //At bottom of list already. Go to top.
+    if(changeTo.attr('id') == null)
+      changeTo = $("#welcome");
+  }
+    //Determine which view to show. Have to pass in what to press
+    if(changeTo.attr('id') == "welcome")
+      changeView($(document.getElementById("welcomeItem").firstElementChild));
+
+    else if(changeTo.attr('id') == "about")
+      changeView($(document.getElementById("aboutItem").firstElementChild));
+
+    else if(changeTo.attr('id') == "skills")
+      changeView($(document.getElementById("skillsItem").firstElementChild));
+
+    else if(changeTo.attr('id') == "projects")
+      changeView($(document.getElementById("projectsItem").firstElementChild));
+
+    else if(changeTo.attr('id') == "food")
+      changeView($(document.getElementById("foodItem").firstElementChild));
 }
 
 //Scroll change view
 $(document).mousewheel(function(event, delta){
   if(!animating){
     animating = true;
+
     if(delta > 0){
-      changeEntireViewUp();
+      findNextDisplay("up");
     }
     else if(delta < 0){
-      changeEntireViewDown();
+      findNextDisplay("down");
     }
     setTimeout(function() {animating = false}, 600);
   }
-});
-
-//Make things selected
-$(function() {
-    $('#contentItems il').click(function() {
-        $(this).siblings().removeClass('selectedMenu');
-        $(this).addClass('selectedMenu');
-
-
-        if(hasClass($(this), "menuItem")){
-          $('#projects').hide(0, $('#welcome').show());
-        }
-    });
 });
 
 //Animation for welcome page
@@ -342,7 +360,7 @@ $(function() {
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
-        largeHeader.style.height = height+'px';
+        welcome.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
     }
@@ -443,14 +461,14 @@ var myFeed = new Instafeed({
           foundImages = 0;
         },
         filter: function(image) {
-        if (image.tags.indexOf('food') >= 0 && foundImages < maxImages) {
+        if (image.tags.indexOf('foodforsite') >= 0 && foundImages < maxImages) {
             foundImages = foundImages + 1;
             return true;
         }
         return false;
         },
-        template: '<li><div><a href="{{link}}" target="_blank"><img src="{{image}}" style="border:10px solid white;"/></div></li>',
-        resolution: 'low_resolution'
+        template: '<li><div><a href="{{link}}" target="_blank"><img id="foodPic" src="{{image}}"/></div></li>',
+        resolution: 'standard_resolution'
     });
 myFeed.run();
 
@@ -460,5 +478,6 @@ function refreshFeed(){
   myFeed.run();
 }
 document.getElementById ("pressForFood").addEventListener ("click", refreshFeed);
+
 
 });

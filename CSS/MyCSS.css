@@ -49,8 +49,8 @@
   color: #FFFFFF;
   transition:all 1s;
   font-size: 100px;
-  width: 99%;
-  height: 99%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -64,9 +64,6 @@ img{
   max-width: 100%;
   height: auto;
   width: auto\9;
-}
-#myPicture{
-  border: 8px solid #ffffff;
 }
 
 .displayDiv{
@@ -132,8 +129,6 @@ img{
 }
 
 .contactLink, .contactLink:visited, .contactLink:active, .contactLink:link, .contactLink:hover{
-    text-decoration: none;
-    color: #FFFFFF;
     margin-left: 4px;
     margin-right: 4px;
 }
@@ -167,6 +162,10 @@ h2{
 
 }
 
+#myPicture{
+  border: 6px solid #ffffff;
+}
+
 #about{
   height: 99%;
   width: 99%;
@@ -182,17 +181,29 @@ h2{
 
 #picContainer{
   width: 800px;
-  margin: 0px !important;
-  padding: 0px;
+  height: 75vh;
+  margin: 0px;
 }
 
+#food{
+  height: 100vh;
+}
+#foodButton{
+  height: 25vh;
+  top: 75%;
+}
 #myPics{
-  width: inherit;
-  height: 100%;
-  padding: inherit;
+  width: 612px;
+  height: 612px;
+}
+
+#pressForFood, #pressForFood.active, #pressForFood.selected{
+  font-size: 30px;
   position: absolute;
-  left: 39%;
-  top: 25%;
+  left:45%;
+  top: 40%;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 #instafeed{
@@ -207,20 +218,95 @@ h2{
   height: 306px;
 }
 
-#pressForFood, #pressForFood.active, #pressForFood.selected{
-  position: absolute;
-  font-size: 30px;
-  top:70.5%;
-  left:46%;
-  color: #ffffff;
-  text-decoration: none;
+#skills{
+  height: 80vh;
 }
 
+#skillsTop{
+  top: 20%;
+}
 
+.skillsTitle{
+  height: 65px;
+}
+
+.skillsLastItem{
+  margin-top: -60%;
+}
+
+.skillsSpace{
+  margin-left:4.55%;
+}
+
+.skillsSpaceLast{
+  margin-left:4%;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.skillIcon:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 
 .menuItem {
   transition: all .2s ease-in-out;
   padding-top: 3px;
   padding-bottom: 3px;
+  z-index: 5;
 }
 .menuItem:hover {  }
+
+.floating{
+    float: left;
+    -webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+
+}
+
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 15px);}
+    to {-webkit-transform: translate(0, -0px);    }
+}
+
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(0, 15px);}
+    to {-moz-transform: translate(0, -0px);}
+}
+
+#foodPic{
+  position: fixed; clip: rect(0px, 700px, 500px, 0px);
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #FFFFFF;
+}
