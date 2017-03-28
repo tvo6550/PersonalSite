@@ -8,10 +8,10 @@ $(document).ready(function(){
   //Randomize color at the beginning
   $("#mainBody").css("background-color", randomColor());
 
-  //Change view on color
+  //Change view color on scroll
   $(document).scroll(function() {
-    var test = randomColor();
-    $("#mainBody").css("background-color", test);
+    var newColor = randomColor();
+    $("#mainBody").css("background-color", newColor);
   });
 
   //Check if a class exists
@@ -127,6 +127,8 @@ $(".menuItem > a").click(function() {
 
 //This is the change view function that will be used mostly everywhere
 function changeView(targetView){
+  //Change color
+  changeColor();
   //Switch the text style
   targetView.parent().siblings().removeClass('selectedMenu');
   targetView.parent().addClass('selectedMenu');
@@ -434,6 +436,11 @@ function refreshFeed(){
 }
 document.getElementById ("pressForFood").addEventListener ("click", refreshFeed);
 
-
+//Carousel initialize
+$('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+});
 
 });

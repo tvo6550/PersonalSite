@@ -5,19 +5,20 @@
   <link rel="shortcut icon" href="Pictures\fries.png"/>
   <meta charset = "utf-8">
   <meta name = "viewport" content = "width=device-width, initial-scale=1">
-  <script src = "JS\jquery-3.1.1.min.js"></script>
   <link rel = "stylesheet" href="bootstrap-3.3.7-dist\css\bootstrap.min.css">
-  <link rel = "stylesheet" href="CSS\MyCSS.css">
   <link rel = "stylesheet" href="CSS\font-awesome.min.css">
   <link rel = "stylesheet" href="CSS\animate.css">
-  <link rel="stylesheet" href="slick/slick-theme.css"/>
+  <link rel = "stylesheet" href="slick/slick-theme.css"/>
+  <link rel = "stylesheet" href="flickity-docs/flickity.min.css" />
+  <link rel = "stylesheet" href="CSS\MyCSS.css">
+  <script src = "JS\jquery-3.1.1.min.js"></script>
   <script src = "bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
   <script src = "JS\MyJS.js"></script>
   <script src = "JS\jquery.mousewheel.js"></script>
   <script src="JS\TweenMax.min.js"></script>
   <script src="JS\instafeed.min.js"></script>
   <script src="slick/slick.min.js"></script>
-
+  <script src="flickity-docs/flickity.pkgd.min.js"></script>
 </head>
 <body id="mainBody">
   <div class="container" id="mainOverlay">
@@ -26,7 +27,7 @@
         <div class="col-md-5" id="tableOfContents">
           <ul id="contentItems">
             <il class="menuItem selectedMenu" id="welcomeItem">
-              <a class = "test"href=""><i class="fa fa-circle" aria-hidden="true"></i> Welcome</a>
+              <a href=""><i class="fa fa-circle" aria-hidden="true"></i> Welcome</a>
             </il>
             <il class="menuItem" id="aboutItem">
               <a href=""><i class="fa fa-circle-thin" aria-hidden="true"></i> Meet Me</a>
@@ -66,7 +67,7 @@
       <div id="top"></div>
       <div id="bottom"></div>
       <div class="container" style="height: 100%">
-        <div class="row alignCen" style="height: 100%">
+        <div class="row alignCen" style="height: 100%; margin-left: -8%;">
           <div class="col-md-4 col-md-offset-1" style="max-width:333px;">
             <img src="Pictures/ThongVoPicture.jpg" id="myPicture"/>
           </div>
@@ -86,45 +87,31 @@
       <div id="bottom"></div>
       <div style="height:100%;">
         <div class="container alignCol" style="height: 100%;">
-        <div class="row" id="skillsTop">
-          <h2 class="skillsTitle" style="margin-top: 0px; margin-bottom: 30px;">Proficient</h2>
-            <div class="col-md-3" style="margin-left: 4.4%;">
-              <img class="skillIcon" id="icon1" src="Pictures/c-logo.png"/ style="height:200px; width:200px";>
+          <div class="row" id="skillsTop">
+            <h2 class="skillsTitle" style="margin-top: 0px; margin-bottom: 30px;">Proficient</h2>
+            <div class="skill-carousel carousel-wrapper-top">
+              <div class="carousel" data-flickity='{ "imagesLoaded": true, "percentPosition": false, "lazyLoad": true, "autoPlay": true, "setGallerySize": false, "wrapAround": true, "resize": true }'>
+                  <img class="skillIcon" src="Pictures/c-logo.png" style="height:200px; width:200px";>
+                  <img class="skillIcon" src="Pictures/cpp.png" style="height:200px; width:200px";>
+                  <img class="skillIcon" src="Pictures/Java_logo_icon.png" style="width:200px; height:155px";>
+              </div>
             </div>
-            <div class="col-md-3 col-md-offset-1">
-              <img class="skillIcon" id="icon2" src="Pictures/cpp.png"/ style="height:200px; width:200px";>
+          </div>
+          <div class="row" id="skillsBottom">
+            <h2 class="skillsTitle skillsSpace" style="margin-bottom: 30px; margin-top: 5px; margin-left: 1.1%;">Experienced</h2>
+            <div class="skill-carousel carousel-wrapper-bottom">
+              <div class="carousel" data-flickity='{ "imagesLoaded": true, "percentPosition": false, "lazyLoad": true, "autoPlay": true, "setGallerySize": false, "wrapAround": true, "resize": true }'>
+                <img class="skillIcon"src="Pictures/csharp.png" style="height:124px; width:110px;">
+                <img class="skillIcon" src="Pictures/HTML5_Logo_512.png" style="height:140px; width:140px;">
+                <img class="skillIcon" src="Pictures/CSS3.png" style="height:140px; width:100px;">
+                <img class="skillIcon" src="Pictures/javascript-shield.png" style="height:140px; width:140px;">
+                <img class="skillIcon" src="Pictures/sharepoint-logo.png" style="height:140px; width:140px;">
+                <img class="skillIcon" src="Pictures/bootstrap-white-logo.png" style="height:117px; width:140px; margin-top: 15px;">
+                <img class="skillIcon" src="Pictures/jqpic.gif" style="height:130px; width:130px;">
+              </div>
             </div>
-            <div class="col-md-3 col-md-offset-1" >
-              <img class="skillIcon" id="icon3" src="Pictures/Java_logo_icon.png"/ style="width:258px; height:200px";>
-            </div>
-        </div>
-        <div class="row" id="skillsBottom">
-          <h2 class="skillsTitle skillsSpace" style="margin-bottom: 30px; margin-top: 0px; margin-left: 2%;">Experienced</h2>
-          <div class="col-md-2 col-md-offset-2" style="margin-left:10%;">
-            <img class="skillIcon"  id="icon4" src="Pictures/csharp.png"/ style="height:140px; width:124px;">
-          </div>
-          <div class="col-md-2 skillsSpace">
-            <img class="skillIcon" id="icon5" src="Pictures/HTML5_Logo_512.png"/ style="height:140px; width:140px;">
-          </div>
-          <div class="col-md-2 skillsSpace">
-            <img class="skillIcon" id="icon6" src="Pictures/CSS3.png"/ style="height:140px; width:100px;">
-          </div>
-          <div class="col-md-2 skillsSpace">
-            <img class="skillIcon" id="icon7" src="Pictures/javascript-shield.png"/ style="height:155px; width:155px;">
           </div>
         </div>
-        <div class="row" id="skillsLast">
-          <div class="col-md-2 col-md-offset-3" style="margin-left:21%;">
-            <img class="skillIcon skillsLastItem" id="icon8" src="Pictures/sharepoint-logo.png"/ style="height:160px; width:160px;">
-          </div>
-          <div class="col-md-2 skillsSpaceLast">
-            <img class="skillIcon skillsLastItem" id="icon9" src="Pictures/bootstrap-white-logo.png"/ style="height:140px; width:168px;">
-          </div>
-          <div class="col-md-2 skillsSpaceLast" style="margin-left:4.6%">
-            <img class="skillIcon skillsLastItem" id="icon10" src="Pictures/jqpic.gif"/ style="height:140px; width:140px;">
-          </div>
-        </div>
-      </div>
       </div>
     </div>
     <div class="displayDiv" id="projects" style="display:none; height: 85vh;">
