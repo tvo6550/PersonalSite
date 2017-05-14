@@ -200,8 +200,7 @@ h2{
   margin-left: 0%;
 }
 
-@media only screen and (min-width: 778px) {
-    /* For desktop: */
+@media only screen and (min-width: 768px) and (max-width: 979px){
     #description{
       font-size: 15px;
       max-width: 20%;
@@ -214,22 +213,20 @@ h2{
     }
 }
 
-@media only screen and (min-width: 992px) {
-    /* For desktop: */
+@media only screen and (min-width: 980px) and (max-width:1199px){
     #description{
       font-size: 20px;
       max-width: 28%;
-      margin-left: -5%;
+      margin-left: 0%;
     }
     #myPicture{
       height: 360px;
       width: 240px;
-      margin-right: 0%;
+      margin-right: -6%;
     }
 }
 
-@media only screen and (min-width: 1200px) {
-    /* For desktop: */
+@media only screen and (min-width: 1200px) and (max-width:1439px) {
     #description{
       font-size: 25px;
       max-width: 30%;
@@ -243,7 +240,6 @@ h2{
 }
 
 @media only screen and (min-width: 1440px) {
-    /* For desktop: */
     #description{
       max-width: 40%;
       font-size: 27px;
@@ -255,12 +251,6 @@ h2{
       width: auto\9;
       margin-right: 0%;
     }
-}
-
-#picContainer{
-  width: 800px;
-  height: inherit;
-  margin: 0px;
 }
 
 #food{
@@ -376,6 +366,16 @@ a:link, a:visited, a:hover, a:active {
   color: #FFFFFF;
 }
 
+.smallSkills #skillsTop .carousel-wrapper-top .carousel {
+  width: 400px;
+  height: 215px;
+}
+
+.smallSkills #skillsBottom .carousel-wrapper-bottom .carousel {
+  width: 650px;
+  height: 155px;
+}
+
 .skill-carousel{
     display:flex;
     align-items: center;
@@ -384,7 +384,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .carousel-wrapper-top .carousel {
-  width: 1020px;
+  width: 820px;
   height: 215px;
 }
 
@@ -407,8 +407,9 @@ a:link, a:visited, a:hover, a:active {
 
 /* position dots in carousel */
 .flickity-page-dots {
-  bottom: -8%;
+  bottom: -6%;
 }
+
 /* white circles */
 .flickity-page-dots .dot {
   width: 12px;
@@ -424,8 +425,8 @@ a:link, a:visited, a:hover, a:active {
 
 /* big buttons, no circle */
 .flickity-prev-next-button {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background: transparent !important;
 }
 
@@ -436,12 +437,41 @@ a:link, a:visited, a:hover, a:active {
 
 .flickity-prev-next-button.previous{
   left: -1%;
+  top: 40%;
 }
 
 .flickity-prev-next-button.next{
   right: -1%;
+  top: 40%;
 }
 
 .hidey{
   display: none;
+}
+
+.projectName{
+  font-size:75px;
+  white-space: nowrap;
+}
+
+.smallSkills{
+  visibility: hidden;
+}
+
+@media only screen and (min-width: 1151px) {
+  .bigSkills{
+    visibility: visible;
+  }
+  .smallSkills{
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .bigSkills{
+    visibility: hidden;
+  }
+  .smallSkills{
+    visibility: visible;
+  }
 }
