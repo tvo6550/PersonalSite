@@ -367,7 +367,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .smallSkills #skillsTop .carousel-wrapper-top .carousel {
-  width: 400px;
+  width: 550px;
   height: 215px;
 }
 
@@ -436,12 +436,12 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .flickity-prev-next-button.previous{
-  left: -1%;
+  left: -7%;
   top: 40%;
 }
 
 .flickity-prev-next-button.next{
-  right: -1%;
+  right: -7%;
   top: 40%;
 }
 
@@ -473,5 +473,22 @@ a:link, a:visited, a:hover, a:active {
   }
   .smallSkills{
     visibility: visible;
+  }
+}
+
+@media only screen and (min-height: 625px) {
+  .skillsTitle{
+    font-size: 75px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-left: 1.07%;
+  }
+}
+@media only screen and (max-height: 624px) {
+  .skillsTitle{
+    font-size: 45px;
+    margin-bottom: -9px;
+    margin-top: 8px;
+    margin-left: 0.7%;
   }
 }
