@@ -92,7 +92,7 @@
 
 #tableOfContents{
   display: flex;
-  top: 43%;
+  top: 38%;
   bottom:0;
   padding: 0px;
   width: 100%;
@@ -118,12 +118,10 @@
 .selectedMenu{
     transform: scale(2.0);
     transform-origin: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.selectedMenu{
-    transform: scale(2.0);
-    transform-origin: left;
-}
 
 .selectedMenu i{
     transform: scale(0.55);
@@ -131,8 +129,9 @@
 }
 
 .contactLink, .contactLink:visited, .contactLink:active, .contactLink:link, .contactLink:hover{
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 40px;
 }
 
 #contactInfo{
@@ -494,5 +493,22 @@ a:link, a:visited, a:hover, a:active {
     margin-bottom: -9px;
     margin-top: 8px;
     margin-left: 0.7%;
+  }
+}
+
+.blink {
+  animation-duration: 500ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.5;
   }
 }
