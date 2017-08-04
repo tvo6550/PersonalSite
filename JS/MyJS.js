@@ -72,7 +72,7 @@ function changeColor(){
 //Pick a new color for background
 function randomColor(){
 
-  var color1 = "#77e1ff";
+  var color1 = "#81CEEA";
   var color2 = "#f4c17a";
   var color3 = "#e56967";
   var color4 = "#79c694";
@@ -145,12 +145,16 @@ function changeView(targetView){
     $("#welcome").show();
   else if(displayID == "aboutItem")
     $("#about").show();
-  else if(displayID == "skillsItem")
-    $("#skills").show();
+  else if(displayID == "workItem")
+    $("#work").show();
   else if(displayID == "projectsItem")
     $("#projects").show();
+  else if(displayID == "skillsItem")
+    $("#skills").show();
   else if(displayID == "foodItem")
     $("#food").show();
+    else if(displayID == "foodItem")
+      $("#food").show();
 }
 
 //Find next display
@@ -181,16 +185,14 @@ function findNextDisplay(direction){
     //Determine which view to show. Have to pass in what to press
     if(changeTo.attr('id') == "welcome")
       changeView($(document.getElementById("welcomeItem").firstElementChild));
-
     else if(changeTo.attr('id') == "about")
       changeView($(document.getElementById("aboutItem").firstElementChild));
-
-    else if(changeTo.attr('id') == "skills")
-      changeView($(document.getElementById("skillsItem").firstElementChild));
-
+    else if(changeTo.attr('id') == "work")
+      changeView($(document.getElementById("workItem").firstElementChild));
     else if(changeTo.attr('id') == "projects")
       changeView($(document.getElementById("projectsItem").firstElementChild));
-
+    else if(changeTo.attr('id') == "skills")
+      changeView($(document.getElementById("skillsItem").firstElementChild));
     else if(changeTo.attr('id') == "food")
       changeView($(document.getElementById("foodItem").firstElementChild));
 }
@@ -208,7 +210,7 @@ $(document).mousewheel(function(event, delta){
     else if(delta < 0){
       findNextDisplay("down");
     }
-    setTimeout(function() {animating = false}, 600);
+    setTimeout(function() {animating = false}, 575);
   }
 });
 
