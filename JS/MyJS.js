@@ -153,8 +153,8 @@ function changeView(targetView){
     $("#skills").show();
   else if(displayID == "foodItem")
     $("#food").show();
-    else if(displayID == "foodItem")
-      $("#food").show();
+  else if(displayID == "foodItem")
+    $("#food").show();
 }
 
 //Find next display
