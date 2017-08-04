@@ -1,6 +1,7 @@
 $(document).ready(function(){
   //Variable to keep track of previous color
   var prevColor;
+  var darkTheme = false;
 
   //Keep track if animating
   var animating = false;
@@ -45,6 +46,16 @@ $(document).ready(function(){
           findNextDisplay("down");
           break;
 
+          case 68: //darkTheme
+          if(darkTheme){
+            darkTheme = false;
+          }
+          else {
+            darkTheme = true;
+          }
+          changeColor();
+          break;
+
           default:
           animating = false;
           return; // exit this handler for other keys
@@ -71,12 +82,22 @@ function changeColor(){
 
 //Pick a new color for background
 function randomColor(){
+  var color1, color2, color3, color4, color5;
 
-  var color1 = "#81CEEA";
-  var color2 = "#f4c17a";
-  var color3 = "#e56967";
-  var color4 = "#79c694";
-  var color5 = "#efa2c6";
+  if (!darkTheme){
+    color1 = "#81CEEA";
+    color2 = "#f4c17a";
+    color3 = "#e56967";
+    color4 = "#79c694";
+    color5 = "#efa2c6";
+  }
+  else{
+    color1 = "#383838";
+    color2 = "#383838";
+    color3 = "#383838";
+    color4 = "#383838";
+    color5 = "#383838";
+  }
   var colorChoice;
 
   var chooseColor = Math.floor(Math.random() * 5) + 1;
@@ -103,7 +124,7 @@ function randomColor(){
     break;
   }
 
-  if(colorChoice == prevColor)
+  if(colorChoice == prevColor && !darkTheme)
     colorChoice = randomColor();
 
   prevColor = colorChoice;
