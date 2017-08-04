@@ -194,6 +194,10 @@ h2{
   width: 99%;
 }
 
+.projectPicture{
+  border: 6px solid #ffffff;
+}
+
 #description{
   font-size: 30px;
   font-family: 'myFontzThin';
