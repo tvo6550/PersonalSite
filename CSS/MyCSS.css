@@ -60,7 +60,7 @@
   overflow: hidden;
 }
 
-#myPicture{
+#myPicture, #apsPic{
   max-width: 100%;
   height: auto;
   width: auto\9;
@@ -178,17 +178,44 @@ h2{
   flex-flow:column wrap;
 }
 
+.workPoint{
+  font-size: 14px;
+}
+
+#workDescription {
+  margin-top: -25%;
+}
+
+#workDescription > il{
+  font-size: 20px;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 9.5px;
+  padding-bottom: 9.5px;
+}
+
+#workDescription > il > i{
+    display: flex;
+    align-items: flex-start;
+}
+#workDescription > il > span{
+    text-align:left;
+    margin-top: -7px;
+    padding-left: 8px;
+}
+
 #welcomeCanvas{
   height: 99%;
   width: 105%;
 }
 
-#myPicture{
+#myPicture, #apsPic{
   border: 6px solid #ffffff;
   margin-right: 0%;
 }
 
-#about{
+#about, #work{
   height: 99vh;
   width: 99%;
 }
@@ -207,25 +234,60 @@ h2{
     #description{
       font-size: 18px;
       max-width: 25%;
-
+      margin-left: -2%;
+    }
+    #workDescription{
+      max-width: 80%;
+      margin-right: 0%;
+    }
+    #APSHead{
+      margin-right: 0%;
     }
     #myPicture{
       height: 360px;
       width: 240px;
       margin-right: -5%;
     }
+    #apsPic{
+      height: 360px;
+      width: 240px;
+      margin-right: -7%;
+    }
+    #APSSection{
+      width: 55%;
+    }
+    #resumeLink{
+      font-size: 20px;
+    }
 }
 
 @media only screen and (min-width: 980px) and (max-width:1199px){
     #description{
-      font-size: 20px;
+      font-size: 18px;
       max-width: 28%;
-      margin-left: 0%;
+    }
+    #workDescription{
+      max-width: 45%;
+      margin-right: -15%;
+    }
+    #APSHead{
+      margin-right: -15%;
     }
     #myPicture{
       height: 360px;
       width: 240px;
       margin-right: -6%;
+    }
+    #apsPic{
+      height: 360px;
+      width: 240px;
+      margin-right: -25%;
+    }
+    #APSSection{
+      width: 55%;
+    }
+    #resumeLink{
+      font-size: 26px !important;
     }
 }
 
@@ -235,10 +297,28 @@ h2{
       max-width: 30%;
       margin-left: 0%;
     }
+    #workDescription{
+      max-width: 80%;
+      margin-right: -5%;
+    }
+    #APSHead{
+      margin-right: 0%;
+    }
     #myPicture{
       height: 460px;
       width: 333px;
-      margin-right: -8%;
+      margin-right: -6%;
+    }
+    #apsPic{
+      height: 400px;
+      width: 266px;
+      margin-right: -20%;
+    }
+    #APSSection{
+      width: 50%;
+    }
+    #resumeLink{
+      font-size: 30px !important;
     }
 }
 
@@ -248,11 +328,27 @@ h2{
       font-size: 27px;
       margin-left: 0%;
     }
+    #workDescription{
+      max-width: 100%;
+      margin-right: -5%;
+    }
+    #APSHead{
+      margin-right: 0%;
+    }
     #myPicture{
       max-width: 100%;
       height: auto;
       width: auto\9;
       margin-right: 0%;
+    }
+    #apsPic{
+      max-width: 100%;
+      height: auto;
+      width: auto\9;
+      margin-right: 0%;
+    }
+    #resumeLink{
+      font-size: 30px !important;
     }
 }
 
