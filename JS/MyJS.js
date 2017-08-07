@@ -252,6 +252,7 @@ $(document).mousewheel(function(event, delta){
         width = window.innerWidth;
         height = window.innerHeight;
         target = {x: width/2 - 25, y: height/2 - 20};
+        divisor = 0;
 
         welcome = document.getElementById('welcome');
         welcome.style.height = height+'px';
@@ -263,10 +264,21 @@ $(document).mousewheel(function(event, delta){
 
         // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/15) {
-            for(var y = 0; y < height; y = y + height/15) {
-                var px = x + Math.random()*width/15;
-                var py = y + Math.random()*height/15;
+
+        //Media Query
+        const mq = window.matchMedia( "(min-width: 769px)" );
+
+        if(mq.matches){
+          divisor = 15;
+        }
+        else{
+          divisor = 7;
+        }
+
+        for(var x = 0; x < width; x = x + width/divisor) {
+            for(var y = 0; y < height; y = y + height/divisor) {
+                var px = x + Math.random()*width/divisor;
+                var py = y + Math.random()*height/divisor;
                 var p = {x: px, originX: px, y: py, originY: py };
                 points.push(p);
             }

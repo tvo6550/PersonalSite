@@ -83,8 +83,7 @@
   overflow: hidden;
 }
 
-.helper{
-  display: inline-block;
+#helper{
   height: 100%;
   vertical-align: middle;
   width: 300px;
@@ -113,6 +112,7 @@
   text-align: center;
   padding-left: 0px;
   padding-right: 0px;
+  margin-left: 0%;
 }
 
 .selectedMenu{
@@ -230,6 +230,26 @@ h2{
   margin-left: 0%;
 }
 
+@media only screen and (max-width: 576px){
+
+}
+
+@media only screen and (min-width: 577px) and (max-width:768){
+
+}
+
+@media only screen and (max-width: 768px){
+  #helper{
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #helper{
+    visibility: visible;
+  }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 979px){
     #description{
       font-size: 18px;
@@ -281,7 +301,7 @@ h2{
     #apsPic{
       height: 360px;
       width: 240px;
-      margin-right: -25%;
+      margin-right: -32%;
     }
     #APSSection{
       width: 55%;
@@ -549,8 +569,9 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .projectName{
-  font-size:60px;
+  font-size:55px;
   white-space: nowrap;
+  margin-bottom: 7px;
 }
 
 .smallSkills{
