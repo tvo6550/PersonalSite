@@ -577,7 +577,7 @@ a:link, a:visited, a:hover, a:active {
 
 @media only screen and (min-height: 625px) {
   .skillsTitle{
-    font-size: 75px;
+    font-size: 65px;
     margin-bottom: 30px;
     margin-top: 5px;
     margin-left: 1.07%;
