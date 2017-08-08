@@ -228,9 +228,52 @@ h2{
   margin-left: 0%;
 }
 
+@media only screen and (min-width: 360px) and (max-width: 540px){
+  #menuIcon{
+    top: 30px;
+    right: 52px;
+  }
+}
 
-@media only screen and (max-width: 539px){
+@media only screen and (min-width: 540px){
+  #menuIcon{
+    top: 45px;
+    right: 70px;
+  }
+}
 
+@media only screen and (min-width: 359px) and (max-width: 768px){
+  .projectName{
+    font-size: 50px;
+  }
+  #foodPic{
+    width: 300px;
+    height: 300px;
+  }
+  #instafeed{
+    width: 300px;
+    height: 300px;
+  }
+  #myPicture, #apsPic{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .projectName{
+    font-size: 55px;
+  }
+  #foodPic{
+    width: 332px;
+    height: 332px;
+  }
+  #instafeed{
+    width: 332px;
+    height: 332px;
+  }
+  #myPicture, #apsPic{
+    display: inline;
+  }
 }
 
 @media only screen and (min-width: 540px) and (max-width:768){
@@ -244,7 +287,7 @@ h2{
 
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   #footer{
     margin-left: -0.5%;
   }
@@ -254,15 +297,21 @@ h2{
   #helper{
     visibility: hidden;
   }
+  #miniMenu{
+    display: inline;
+  }
 }
 
 @media only screen and (min-width: 1020px) {
   #helper{
     visibility: visible;
   }
+  #miniMenu{
+    display: none;
+  }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 979px){
+@media only screen and (min-width: 768px) and (max-width: 980px){
     #description{
       font-size: 18px;
       max-width: 30%;
@@ -293,7 +342,7 @@ h2{
     }
 }
 
-@media only screen and (min-width: 980px) and (max-width:1199px){
+@media only screen and (min-width: 980px) and (max-width:1200px){
     #description{
       font-size: 18px;
       max-width: 28%;
@@ -400,7 +449,7 @@ h2{
   font-size: 40px;
   color: #ffffff;
   text-decoration: none;
-  margin-top: 10%;
+  margin-top: 0%;
 }
 
 #skillsTop{
@@ -508,6 +557,7 @@ a:link, a:visited, a:hover, a:active {
     align-items: center;
     align-content: center;
     flex-flow: column nowrap;
+    margin-top: -2%;
 }
 
 .carousel-wrapper-top .carousel {
@@ -577,7 +627,6 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .projectName{
-  font-size:55px;
   white-space: nowrap;
   margin-bottom: 7px;
 }
@@ -639,5 +688,22 @@ a:link, a:visited, a:hover, a:active {
 
   to {
     opacity: 0.5;
+  }
+}
+
+.lightBlink {
+  animation-duration: 1000ms;
+  animation-name: lightBlink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes lightBlink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.65;
   }
 }

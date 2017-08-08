@@ -275,7 +275,7 @@ $(document).mousewheel(function(event, delta){
           divisor = 7;
         }
 
-        const mq2 = window.matchMedia( "(min-width: 359px)" );
+        const mq2 = window.matchMedia( "(max-width: 500px)" );
 
         if(mq2.matches){
           divisor = 4;
