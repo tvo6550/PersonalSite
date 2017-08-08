@@ -112,7 +112,6 @@
   text-align: center;
   padding-left: 0px;
   padding-right: 0px;
-  margin-left: 0%;
 }
 
 .selectedMenu{
@@ -183,7 +182,7 @@ h2{
 }
 
 #workDescription {
-  margin-top: -25%;
+  margin-top: -130px;
 }
 
 #workDescription > il{
@@ -207,15 +206,14 @@ h2{
 
 #welcomeCanvas{
   height: 99%;
-  width: 105%;
+  width: 99%;
 }
 
 #myPicture, #apsPic{
   border: 6px solid #ffffff;
-  margin-right: 0%;
 }
 
-#about, #work{
+#about, #work, #skills{
   height: 99vh;
   width: 99%;
 }
@@ -230,21 +228,35 @@ h2{
   margin-left: 0%;
 }
 
-@media only screen and (max-width: 576px){
+
+@media only screen and (max-width: 539px){
 
 }
 
-@media only screen and (min-width: 577px) and (max-width:768){
+@media only screen and (min-width: 540px) and (max-width:768){
 
 }
 
 @media only screen and (max-width: 768px){
+  #footer{
+    margin-left: -0.9%;
+  }
+
+}
+
+@media only screen and (min-width: 769px) {
+  #footer{
+    margin-left: -0.5%;
+  }
+}
+
+@media only screen and (max-width: 1019px){
   #helper{
     visibility: hidden;
   }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1020px) {
   #helper{
     visibility: visible;
   }
@@ -253,8 +265,8 @@ h2{
 @media only screen and (min-width: 768px) and (max-width: 979px){
     #description{
       font-size: 18px;
-      max-width: 25%;
-      margin-left: -2%;
+      max-width: 30%;
+      margin-left: 6%;
     }
     #workDescription{
       max-width: 80%;
@@ -266,12 +278,12 @@ h2{
     #myPicture{
       height: 360px;
       width: 240px;
-      margin-right: -5%;
+      margin-right: -30%;
     }
     #apsPic{
       height: 360px;
       width: 240px;
-      margin-right: -7%;
+      margin-right: -30%;
     }
     #APSSection{
       width: 55%;
@@ -304,7 +316,7 @@ h2{
       margin-right: -32%;
     }
     #APSSection{
-      width: 55%;
+      width: 50%;
     }
     #resumeLink{
       font-size: 26px !important;
@@ -389,10 +401,6 @@ h2{
   color: #ffffff;
   text-decoration: none;
   margin-top: 10%;
-}
-
-#skills{
-  height: 99vh;
 }
 
 #skillsTop{
@@ -575,24 +583,28 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .smallSkills{
-  visibility: hidden;
+  display:none;
+}
+
+.eitherSkills{
+  position: absolute;
 }
 
 @media only screen and (min-width: 1151px) {
   .bigSkills{
-    visibility: visible;
+    display: inline-block;
   }
   .smallSkills{
-    visibility: hidden;
+    display: none;
   }
 }
 
 @media only screen and (max-width: 1150px) {
   .bigSkills{
-    visibility: hidden;
+    display: none;
   }
   .smallSkills{
-    visibility: visible;
+    display: inline-block;
   }
 }
 
