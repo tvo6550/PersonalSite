@@ -275,6 +275,12 @@ $(document).mousewheel(function(event, delta){
           divisor = 7;
         }
 
+        const mq2 = window.matchMedia( "(min-width: 359px)" );
+
+        if(mq2.matches){
+          divisor = 4;
+        }
+
         for(var x = 0; x < width; x = x + width/divisor) {
             for(var y = 0; y < height; y = y + height/divisor) {
                 var px = x + Math.random()*width/divisor;
