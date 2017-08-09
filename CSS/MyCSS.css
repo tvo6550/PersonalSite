@@ -228,7 +228,7 @@ h2{
   margin-left: 0%;
 }
 
-@media only screen and (min-width: 360px) and (max-width: 540px){
+@media only screen and (min-width: 359px) and (max-width: 540px){
   #menuIcon{
     top: 30px;
     right: 52px;
@@ -254,8 +254,17 @@ h2{
     width: 300px;
     height: 300px;
   }
-  #myPicture, #apsPic{
-    display: none;
+  .meInfo{
+    flex-flow: column nowrap;
+  }
+  #description{
+    font-size: 20px;
+    max-width: 75%;
+    margin-left: 6%;
+  }
+  #myPicture{
+    width: 75%;
+    margin-left: 6%;
   }
 }
 
@@ -271,8 +280,8 @@ h2{
     width: 332px;
     height: 332px;
   }
-  #myPicture, #apsPic{
-    display: inline;
+  .meInfo{
+    flex-flow: row nowrap;
   }
 }
 
@@ -328,6 +337,7 @@ h2{
       height: 360px;
       width: 240px;
       margin-right: -30%;
+      margin-left: 0%;
     }
     #apsPic{
       height: 360px;
