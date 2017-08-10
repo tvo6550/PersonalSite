@@ -11,8 +11,13 @@ $(document).ready(function(){
 
   //Change view color on scroll
   $(document).scroll(function() {
-    var newColor = randomColor();
-    $("#mainBody").css("background-color", newColor);
+    //Media Query
+    const mq = window.matchMedia( "(min-width: 1020px)" );
+
+    if(mq.matches){
+      var newColor = randomColor();
+      $("#mainBody").css("background-color", newColor);
+    }
   });
 
   //Check if a class exists
@@ -143,7 +148,7 @@ function hexc(rgb) {
 //Change view when pressing on menu
 $(".menuItem > a").click(function() {
         changeView($(this));
-        turnMenuOff();
+        turnMenu();
         return false;
     });
 
@@ -488,21 +493,47 @@ $('.main-carousel').flickity({
 //Menu functionalities
 function menuOn(){
     document.getElementById("helper").style.visibility = "visible";
+    document.getElementById("outsideMenu").style.display = "inline";
 }
 
 function menuOff(){
-    document.getElementById("helper").style.visibility = "hidden";
+    //Media Query
+    const mq = window.matchMedia( "(max-width: 1020px)" );
+
+    if(mq.matches){
+      document.getElementById("helper").style.visibility = "hidden";
+      document.getElementById("outsideMenu").style.display = "none";
+    }
 }
 
-function turnMenuOff(){
+function turnMenu(){
   //Media Query
   const mq = window.matchMedia( "(max-width: 1020px)" );
 
   if(mq.matches){
     menuOff();
   }
+  else{
+    menuOn();
+  }
 }
-
 document.getElementById ("menuIcon").addEventListener("click", menuOn);
+
+//Detect res resize
+(function () {
+    var width = screen.width,
+        height = screen.height;
+    setInterval(function () {
+        if (screen.width !== width || screen.height !== height) {
+            width = screen.width;
+            height = screen.height;
+            $(window).trigger('resolutionchange');
+        }
+    }, 50);
+}());
+
+$(window).bind('resolutionchange', turnMenu)
+
+document.getElementById ("outsideMenu").addEventListener("click", menuOff);
 
 });

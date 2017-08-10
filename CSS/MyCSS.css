@@ -16,6 +16,7 @@
 #top, #bottom, #left, #right {
   background: #ffffff;
   position: fixed;
+  z-index: 10;
 }
 
 #left, #right {
@@ -51,12 +52,6 @@
   font-size: 100px;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-}
-
-#mainContent{
-  width: 99%;
-  height: 99%;
   overflow: hidden;
 }
 
@@ -101,10 +96,10 @@
   display: flex;
   flex-flow: column nowrap;
   padding-left: 38px;
+  z-index: 2;
 }
 
 #footer{
-  position: absolute;
   bottom: 0;
   padding-bottom: 10px;
   font-size: 18px;
@@ -112,19 +107,6 @@
   text-align: center;
   padding-left: 0px;
   padding-right: 0px;
-}
-
-.selectedMenu{
-    transform: scale(2.0);
-    transform-origin: left;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-
-.selectedMenu i{
-    transform: scale(0.55);
-    transform-origin: left;
 }
 
 .contactLink, .contactLink:visited, .contactLink:active, .contactLink:link, .contactLink:hover{
@@ -179,10 +161,6 @@ h2{
 
 .workPoint{
   font-size: 14px;
-}
-
-#workDescription {
-  margin-top: -130px;
 }
 
 #workDescription > il{
@@ -257,6 +235,25 @@ h2{
   .meInfo{
     flex-flow: column nowrap;
   }
+  .APSContainer > .alignCen{
+    flex-flow: column nowrap;
+  }
+  .APSContainer{
+    margin-left: 0px;
+  }
+  #APSHead{
+    margin-top: 30%;
+    margin-left: 35px;
+    font-size: 34px;
+  }
+  #apsPic{
+    width: 70%;
+    margin-right: -11%;
+  }
+  #workDescription{
+    max-width: 84%;
+    margin-top:  -150px;
+  }
   #description{
     font-size: 20px;
     max-width: 77%;
@@ -266,6 +263,12 @@ h2{
     width: 70%;
     margin-left: 6%;
     margin-bottom: 32%;
+  }
+  #footer{
+    margin-left: -0.9%;
+  }
+  #mainBody{
+    overflow: visible;
   }
 }
 
@@ -284,22 +287,27 @@ h2{
   .meInfo{
     flex-flow: row nowrap;
   }
-}
-
-@media only screen and (min-width: 540px) and (max-width:768){
-
-}
-
-@media only screen and (max-width: 768px){
-  #footer{
-    margin-left: -0.9%;
+  .APSContainer > .alignCen{
+    flex-flow: row nowrap;
+    margin-left: -8%;
   }
-
-}
-
-@media only screen and (min-width: 768px) {
+  .APSContainer{
+    margin-left: 35px;
+  }
+  #workDescription{
+    max-width: 100%;
+    margin-top: -130px;
+  }
+  #APSHead{
+    margin-top: 0%;
+    margin-left:22px;
+    font-size: 35px;
+  }
   #footer{
     margin-left: -0.5%;
+  }
+  #mainBody{
+    overflow: hidden;
   }
 }
 
@@ -310,6 +318,18 @@ h2{
   #miniMenu{
     display: inline;
   }
+  #menuBackground{
+    display:inline;
+  }
+  #tableOfContents{
+    top: 34%;
+  }
+  #contentItems > .menuItem{
+    border-bottom: 2px;
+  }
+  #tableContentsRow{
+    height: 45px;
+  }
 }
 
 @media only screen and (min-width: 1020px) {
@@ -317,6 +337,28 @@ h2{
     visibility: visible;
   }
   #miniMenu{
+    display: none;
+  }
+  #menuBackground{
+    display:none;
+  }
+  #tableOfContents{
+    top: 38%;
+  }
+  .selectedMenu{
+      transform: scale(2.0);
+      transform-origin: left;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  .selectedMenu i{
+      transform: scale(0.55);
+      transform-origin: left;
+  }
+  #tableContentsRow{
+    height: 100%;
+  }
+  #outsideMenu{
     display: none;
   }
 }
@@ -717,4 +759,8 @@ a:link, a:visited, a:hover, a:active {
   to {
     opacity: 0.65;
   }
+}
+
+.raiseZ{
+  z-index:3;
 }
