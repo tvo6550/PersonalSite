@@ -231,14 +231,14 @@ h2{
 @media only screen and (min-width: 359px) and (max-width: 540px){
   #menuIcon{
     top: 30px;
-    right: 52px;
+    left: 20px;
   }
 }
 
 @media only screen and (min-width: 540px){
   #menuIcon{
     top: 45px;
-    right: 70px;
+    left: 35px;
   }
 }
 
@@ -259,12 +259,13 @@ h2{
   }
   #description{
     font-size: 20px;
-    max-width: 75%;
+    max-width: 77%;
     margin-left: 6%;
   }
   #myPicture{
-    width: 75%;
+    width: 70%;
     margin-left: 6%;
+    margin-bottom: 32%;
   }
 }
 
@@ -302,7 +303,7 @@ h2{
   }
 }
 
-@media only screen and (max-width: 1019px){
+@media only screen and (max-width: 1020px){
   #helper{
     visibility: hidden;
   }
