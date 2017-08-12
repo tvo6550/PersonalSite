@@ -493,7 +493,15 @@ $('.main-carousel').flickity({
 //Menu functionalities
 function menuOn(){
     document.getElementById("helper").style.visibility = "visible";
-    document.getElementById("outsideMenu").style.display = "inline";
+
+    const mq = window.matchMedia( "(max-width: 1020px)" );
+
+    if(mq.matches){
+      document.getElementById("outsideMenu").style.display = "inline";
+    }
+    else{
+      document.getElementById("outsideMenu").style.display = "none";
+    }
 }
 
 function menuOff(){
