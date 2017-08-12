@@ -26,13 +26,13 @@
   <link rel = "stylesheet" href="CSS\MyCSS.css">
 </head>
 <body id="mainBody">
-  <div class="container" id="mainOverlay" style="position: fixed; z-index: 3;">
-    <div id="helper" style="position:absolute; z-index: 5; height: 100%;">
-      <div class="row" id="tableContentsRow">
+  <div class="container" id="mainOverlay">
+    <div id="helper" style="position:absolute; height:100%;">
+      <div class="row" id="tableContentsRow" style="height: 100%;">
         <div class="col-md-5" id="tableOfContents">
           <div id="outsideMenu" style="position:absolute; height: 100vh; width: 100vw; display:none; z-index:0;"></div>
           <div id="menuBackground" style="z-index: 4; background-color: black; opacity: 0.8; height: 97%; width: 52%; position: absolute; top: 0; left: 0;"></div>
-          <ul id="contentItems" style="z-index: 5">
+          <ul id="contentItems" style="z-index:5;">
             <il class="menuItem selectedMenu" id="welcomeItem">
               <a href=""><i class="fa fa-circle" aria-hidden="true"></i> Welcome</a>
             </il>
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div id="miniMenu" style="position:absolute; width: 100vw; height: 100vh;">
-      <i class="fa fa-bars lightBlink" id="menuIcon" aria-hidden="true" style="font-size: 30px; position: absolute; z-index: 4;"></i>
+      <i class="fa fa-bars lightBlink" id="menuIcon" aria-hidden="true" style="font-size: 30px; position: absolute; z-index: 2;"></i>
     </div>
   </div>
   <div class="everyDiv">

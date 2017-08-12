@@ -128,9 +128,6 @@ h2{
   font-family: 'myFontzThin';
 }
 
-.welcomeMessage{
-}
-
 .alignColCen{
   display: flex;
   align-items: center;
@@ -326,7 +323,7 @@ h2{
     display:inline;
   }
   #tableOfContents{
-    top: 34%;
+    top: 15px;
   }
   #contentItems > .menuItem{
     border-bottom: 2px;
