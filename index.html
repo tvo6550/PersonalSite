@@ -26,13 +26,13 @@
   <link rel = "stylesheet" href="CSS\MyCSS.css">
 </head>
 <body id="mainBody">
-  <div class="container" id="mainOverlay" style="position: fixed;">
-    <div id="helper" style="height: 100%;">
+  <div class="container" id="mainOverlay" style="position: fixed; z-index: 3;">
+    <div id="helper" style="position:absolute; z-index: 5; height: 100%;">
       <div class="row" id="tableContentsRow">
         <div class="col-md-5" id="tableOfContents">
-          <div id="outsideMenu" style="height: 100vh; width: 100vw; display:none;"></div>
-          <div id="menuBackground" style="background-color: black; opacity: 0.8; height: 97%; width: 52%; position: absolute; top: 0; left: 0;"></div>
-          <ul id="contentItems">
+          <div id="outsideMenu" style="position:absolute; height: 100vh; width: 100vw; display:none; z-index:0;"></div>
+          <div id="menuBackground" style="z-index: 4; background-color: black; opacity: 0.8; height: 97%; width: 52%; position: absolute; top: 0; left: 0;"></div>
+          <ul id="contentItems" style="z-index: 5">
             <il class="menuItem selectedMenu" id="welcomeItem">
               <a href=""><i class="fa fa-circle" aria-hidden="true"></i> Welcome</a>
             </il>
@@ -55,8 +55,8 @@
         </div>
       </div>
     </div>
-    <div id="miniMenu" style="position:absolute; width: 100vw; height: 100vh; top:0;">
-      <i class="fa fa-bars lightBlink" id="menuIcon" aria-hidden="true" style="font-size: 30px; position: absolute;"></i>
+    <div id="miniMenu" style="position:absolute; width: 100vw; height: 100vh;">
+      <i class="fa fa-bars lightBlink" id="menuIcon" aria-hidden="true" style="font-size: 30px; position: absolute; z-index: 4;"></i>
     </div>
   </div>
   <div class="everyDiv">
@@ -80,7 +80,7 @@
       <div id="top"></div>
       <div id="bottom"></div>
       <div class="container meContainer" style="height: 100%">
-        <div class="row alignCen meInfo" style="height: 100%;">
+        <div class="row alignCen meInfo" style="height: 100%; margin-left: -8%;">
           <div class="col-md-4 col-md-offset-1" style="max-width:333px;">
             <img src="Pictures/ThongVoPicture.jpg" id="myPicture"/>
           </div>
@@ -89,7 +89,7 @@
             Currently, I am trying to develop myself towards being a <b>full stack developer</b>.
             I have recently found my passion for <b>Human-Computer Interaction</b>.
             I really enjoy experiencing the world and trying out <b>new food</b>.</br>
-            Here's my <b><a class=" blink" href="https://www.dropbox.com/s/7ewndfubb571nl8/thong_vo_resume_aug2017.docx?dl=0" target="_blank" class="blink" id="resumeLink" style="font-size:38px;">resume</a></b>.
+            Here's my <b><a class="raiseZ" href="https://www.dropbox.com/s/7ewndfubb571nl8/thong_vo_resume_aug2017.docx?dl=0" target="_blank" class="blink" id="resumeLink" style="font-size:38px;">resume</a></b>.
           </div>
         </div>
       </div>
@@ -121,17 +121,17 @@
       <div id="right"></div>
       <div id="top"></div>
       <div id="bottom"></div>
-      <div class="container alignColWrap"style="height:93vh;">
+      <div class="container alignColWrap" style="height:93vh;">
         <div class="row" id="burgerProject" style="margin-top: -2%;">
           <div class="col-md-6 col-md-offset-3">
             <h2 class="projectName">Burger Builder</h2>
-            <a href="https://github.com/programmingprincess/burgerbuilder" target="_blank"><img src="Pictures/burgerbuilder.gif" class="projectPicture" style="height: 175px; width: 300px;"/></a>
+            <a class="raiseZ" href="https://github.com/programmingprincess/burgerbuilder" target="_blank"><img src="Pictures/burgerbuilder.gif" class="projectPicture" style="height: 175px; width: 300px;"/></a>
           </div>
         </div>
         <div class="row" id="starProject" style="margin-top: -2%;">
           <div class="col-md-6 col-md-offset-3">
             <h2 class="projectName" style="margin-bottom: -3px;">Star Gazer</h2>
-            <a href="https://github.com/c96/ODAS_assets" target="_blank"><img src="Pictures/stargazer.gif" class="projectPicture" style="height: 175px; width: 300px;"/></a>
+            <a class="raiseZ" href="https://github.com/c96/ODAS_assets" target="_blank"><img src="Pictures/stargazer.gif" class="projectPicture" style="height: 175px; width: 300px;"/></a>
           </div>
         </div>
       </div>
@@ -204,35 +204,33 @@
       <div class="container" style="height:100vh;">
         <div class="row alignCen" id="picContainer" style="height:100vh;">
           <div class="col-md-8 alignColCen" id="myPics">
-            <span>
-              <span>
-                <div id="instafeed" style="background-color: #ffffff;"></div>
-              </span>
-              <a href="javascript:void(0)" class="blink" id="pressForFood">More Food</a>
+            <span style="z-index:2;" >
+              <div id="instafeed" style="background-color: #ffffff;"></div>
             </span>
+            <a href="javascript:void(0)" class="blink raiseZ" id="pressForFood">More Food</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container" id="footer" style="position: fixed; z-index: 100;">
+  <div class="container" id="footer" style="position: fixed;">
     <div class="row" id="contactInfo">
       <div class="col-md-12">
         <ul>
           <il>
-            <a class="contactLink" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=tvo6550@gmail.com"><span><i class="fa fa-envelope" aria-hidden="true"></i></span></a>
+            <a class="contactLink raiseZ" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=tvo6550@gmail.com"><span><i class="fa fa-envelope" aria-hidden="true"></i></span></a>
           </il>
           <il>
-            <a class="contactLink" target="_blank" href="https://github.com/tvo6550"><span><i class="fa fa-github-square" aria-hidden="true"></i></span></a>
+            <a class="contactLink raiseZ" target="_blank" href="https://github.com/tvo6550"><span><i class="fa fa-github-square" aria-hidden="true"></i></span></a>
           </il>
           <il>
-            <a class="contactLink" target="_blank" href="https://www.linkedin.com/in/thong-vo-285480b3"><span><i class="fa fa-linkedin-square" aria-hidden="true"></i></span></a>
+            <a class="contactLink raiseZ" target="_blank" href="https://www.linkedin.com/in/thong-vo-285480b3"><span><i class="fa fa-linkedin-square" aria-hidden="true"></i></span></a>
           </il>
           <il>
-            <a class="contactLink" target="_blank" href="https://www.facebook.com/TheThongVo" ><span><i class="fa fa-facebook-square" aria-hidden="true"></i></span></a>
+            <a class="contactLink raiseZ" target="_blank" href="https://www.facebook.com/TheThongVo" ><span><i class="fa fa-facebook-square" aria-hidden="true"></i></span></a>
           </il>
           <il>
-            <a class="contactLink" target="_blank" href="https://www.instagram.com/thethongvo/"><span><i class="fa fa-instagram" aria-hidden="true"></i></span></a>
+            <a class="contactLink raiseZ" target="_blank" href="https://www.instagram.com/thethongvo/"><span><i class="fa fa-instagram" aria-hidden="true"></i></span></a>
           </il>
         </ul>
       </div>
