@@ -536,4 +536,9 @@ $(window).bind('resolutionchange', turnMenu)
 
 document.getElementById ("outsideMenu").addEventListener("click", menuOff);
 
+document.getElementById ("mainOverlay").addEventListener("click", heyo);
+
+function heyo(){
+  console.log("heyo");
+}
 });

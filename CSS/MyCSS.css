@@ -96,7 +96,6 @@
   display: flex;
   flex-flow: column nowrap;
   padding-left: 38px;
-  z-index: 2;
 }
 
 #footer{
@@ -183,8 +182,10 @@ h2{
 }
 
 #welcomeCanvas{
-  height: 99%;
-  width: 99%;
+  top:15px;
+  bottom:15px;
+  height: 94%;
+  width: 94%;
 }
 
 #myPicture, #apsPic{
@@ -234,6 +235,7 @@ h2{
   }
   .meInfo{
     flex-flow: column nowrap;
+    margin-left: -8%;
   }
   .APSContainer > .alignCen{
     flex-flow: column nowrap;
@@ -393,6 +395,9 @@ h2{
     #resumeLink{
       font-size: 20px;
     }
+    .meInfo{
+      margin-left: -8%;
+    }
 }
 
 @media only screen and (min-width: 980px) and (max-width:1200px){
@@ -401,7 +406,7 @@ h2{
       max-width: 28%;
     }
     #workDescription{
-      max-width: 45%;
+      max-width: 100%;
       margin-right: -15%;
     }
     #APSHead{
@@ -423,6 +428,9 @@ h2{
     #resumeLink{
       font-size: 26px !important;
     }
+    .meInfo{
+      margin-left: -0.5%;
+    }
 }
 
 @media only screen and (min-width: 1200px) and (max-width:1439px) {
@@ -432,7 +440,7 @@ h2{
       margin-left: 0%;
     }
     #workDescription{
-      max-width: 80%;
+      max-width: 5o%;
       margin-right: -5%;
     }
     #APSHead{
@@ -453,6 +461,9 @@ h2{
     }
     #resumeLink{
       font-size: 30px !important;
+    }
+    .meInfo{
+      margin-left: -8%;
     }
 }
 
@@ -483,6 +494,9 @@ h2{
     }
     #resumeLink{
       font-size: 30px !important;
+    }
+    .meInfo{
+      margin-left: -8%;
     }
 }
 
@@ -555,7 +569,7 @@ h2{
   transition: all .2s ease-in-out;
   padding-top: 3px;
   padding-bottom: 3px;
-  z-index: 5;
+  z-index: 20;
 }
 .menuItem:hover {  }
 
@@ -713,7 +727,7 @@ a:link, a:visited, a:hover, a:active {
 @media only screen and (min-height: 625px) {
   .skillsTitle{
     font-size: 65px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     margin-top: 5px;
     margin-left: 1.07%;
   }
@@ -762,5 +776,6 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .raiseZ{
-  z-index:3;
+  position: absolute;
+  z-index: 50;
 }
