@@ -284,7 +284,7 @@ $(document).mousewheel(function(event, delta){
         const mq2 = window.matchMedia( "(max-width: 500px)" );
 
         if(mq2.matches){
-          divisor = 4;
+          divisor = 3.5;
         }
 
         for(var x = 0; x < width; x = x + width/divisor) {
