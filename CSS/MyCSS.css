@@ -270,6 +270,20 @@ h2{
   #footer{
     margin-left: -0.9%;
   }
+  #work{
+    height: 100%;
+  }
+  #APSSection{
+    margin-top: -25%;
+  }
+  .APSContainer > .alignCen{
+    margin-left: -8%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  #projects > .alignColWrap{
+    margin-bottom: 100px;
+  }
 }
 
 @media only screen and (min-width: 768px){
@@ -315,6 +329,9 @@ h2{
   }
   h2{
     font-size: 75px;
+  }
+  .APSContainer > .alignCen{
+    margin-left: -8%;
   }
 }
 
